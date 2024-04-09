@@ -757,9 +757,8 @@ cmd({
  741                .catch((err) => console.log(err));
             } else if (text.split(" ")[0] === "open") {
                 await Void.groupSettingUpdate(citel.chat, "not_announcement")
-                    //.then((res) => reply(`Group Chat Unmuted :)`))
-                    .then((res)) => reply('〖 *Group settings changed* 〗\nGroup settings has been changed \nNow EveryoneCan send message\n\nMAKINO-MD.'))
-                    .catch((err) => console.log(err));
+ 744                     .then((res) => reply(`Group Chat Unmuted :)`))
+ 745                     .catch((err) => console.log(err));
             } else {
 
                 return citel.reply(`Group Mode:\n${prefix}group open- to open\n${prefix}group close- to close`);
