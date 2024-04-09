@@ -20,8 +20,8 @@ Secktor.cmd({
 •͙͙✧𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐒𝐓𝐀𝐑-𝐌𝐃
 •͙͙✧⃝┗━━━━━•❃°•°•━━━━━•❃°•°•
 ┗━━━━━•❃°•°•━━━━━•❃°•°•\n`*/
-			let str +=`
-┌───═[ *MAKINO-MD* ]═──▸
+	     let str =`┌───═[ *MAKINO-MD* ]═──▸
+	     str += `
 │╭────────────···▸
 ┴│▸
 ⬡│▸ User:- ${citel.pushName}
@@ -32,7 +32,7 @@ Secktor.cmd({
 ⬡│▸ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 ┬│▸
 │╰─────────────···▸
-└───────────────···▸
+└───────────────···▸\n`
 
 
 for (let i = 0; i < commands.length; i++) 
