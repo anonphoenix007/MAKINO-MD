@@ -49,7 +49,7 @@ async(Void, citel,text) => {
     if (!text) return citel.reply(`Hey there! ${citel.pushName}. How are you doing these days?`);
     // const { Configuration, OpenAIApi } = require("openai");
     // const configuration = new Configuration({
-    //     apiKey: Config.OPENAI_API_KEY || "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",
+    //     apiKey: Config.OPENAI_API_KEY || "EnCY1wxuP0opMmrxiPgOT3BlbkFJ7epy1FuhppRue4YNeeOm",
     // });
     // const openai = new OpenAIApi(configuration);
     // const completion = await openai.createCompletion({
@@ -136,7 +136,7 @@ cmd({
         timestampe = speed();
         latensie = speed() - timestampe;
         let ter = `
-ㅤ ❁    🔰STAR-ALIVE-2🔰     
+ㅤ ❁    🔰MAKINO-MD-ALIVE-2🔰     
 ╰─➤｡･:*˚:✧｡ *${tlang().title}* ｡･:*˚:✧｡
 ╰─➤*🌟Description:* A WhatsApp bot with rich features, built in NodeJs to make your WhatsApp enjoyable.
 ╰─➤*⚡️Speed:* ${latensie.toFixed(4)} ms
@@ -180,16 +180,15 @@ cmd({
         filename: __filename,
     },
     async(Void, citel) => {
-        let { data } = await axios.get('https://api.github.com/repos/Xcelsama/STAR-MD')
+        let { data } = await axios.get('https://api.github.com/repos/Anonphoenix007/MAKINO-MD')
         let cap = `Hey ${citel.pushName}\n
 *⭐ TOTᗩᒪ ՏTᗩᖇՏ:* ${data.stargazers_count} stars
 *🍽️ ᖴOᖇKՏ:* ${data.forks_count} forks
-*🍁 ᖇᗴᑭO:*https://github.com/Xcelsama/STAR-MD
-*⚔️ᘜᖇOᑌᑭ:* https://chat.whatsapp.com/Lg0lY4M1k8oDMYzylg86xs
-*📡ᑭᑌᗷᒪIᑕ ᘜᖇOᑌᑭ:* https://chat.whatsapp.com/EmP3syvou18HrZk6R6nTAK
-*🔍Տᑕᗩᑎ ᑫᖇ:* https://star-md-qr-web-xcelsama-e29e85286f3a.herokuapp.com/
-*💻ᑕᕼᗩᑎᑎᗴᒪ ᒪIᑎK:* https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m
-*⚙️DᗴᑭloY YOᑌᖇ Oᗯᑎ:*-https://dashboard.heroku.com/new?template=https://github.com/Xcelsama/STAR-MD`
+*🍁 ᖇᗴᑭO:*https://github.com/Anonphoenix007/MAKINO-MD
+*⚔️ᘜᖇOᑌᑭ:* https://chat.whatsapp.com/BRDE2Yqsj9iAkTxhnuI1AL
+*🔍Տᑕᗩᑎ ᑫᖇ:* https://makino-md-d1a06dd3eac7.herokuapp.com/
+*💻ᑕᕼᗩᑎᑎᗴᒪ ᒪIᑎK:* https://whatsapp.com/channel/0029VaaSaXD23n3ZEognud1V
+*⚙️DᗴᑭloY YOᑌᖇ Oᗯᑎ:*-https://dashboard.heroku.com/new?template=https://github.com/Anonphoenix007/MAKINO-MD`
         let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
@@ -197,7 +196,7 @@ cmd({
             headerType: 4,
             contextInfo: {
                 externalAdReply: {
-                    title: "STAR-REPO",
+                    title: "MAKINO-MD bot REPO",
                     body: "Easy to Use",
                     thumbnail: log0,
                     mediaType: 4,

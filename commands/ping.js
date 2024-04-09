@@ -22,6 +22,6 @@ Secktor.cmd({
         const { key } = await Void.sendMessage(citel.chat, {text: '```𝐒𝐓𝐀𝐑 𝐈𝐒 𝐏𝐢𝐧𝐠𝐢𝐧𝐠!!!```'});
         var final = new Date().getTime();
        // await Secktor.sleep(1000)
-       return await Void.sendMessage(citel.chat, {text: '*𝐏𝐨𝐧𝐠 🏓*\n *' + (final - inital) + ' ms* ', edit: key});
+       return await Void.sendMessage(citel.chat, {text: '*𝐏𝐨𝐧𝐠 🥹\n *' + (final - inital) + ' ms* ', edit: key});
     }
 );

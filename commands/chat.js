@@ -30,7 +30,7 @@
 
 
 
-let Suhail_Md = "STAR MD Whatsapp bot md" 
+let Suhail_Md = "MAKINO-MD Whatsapp bot md" 
 let {cmd , prefix,Config} = require("../lib") 
 
 // ============================ CHATS SETTINGS ============================  

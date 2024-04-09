@@ -26,9 +26,9 @@ cmd({
         const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
         const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
         //-----------------------------------------
-        if (!citel.isGroup) return citel.reply("This command is only for group")
+        if (!citel.isGroup) return citel.reply("Gomen,Group command.")
         if (!text) return citel.reply(`❌ Please provide me term like like\n1-events\n2-antilink\n3-nsfw\n4-bot`)
-        if (!isAdmins) return citel.reply("❌ This command is only for admin")
+        if (!isAdmins) return citel.reply("❌ Only Admin can use this command,Sorry.")
         switch (text.split(" ")[0]) {
             case 'antilink':
                 {
@@ -36,7 +36,7 @@ cmd({
                     if (!checkgroup) {
                         await new sck({ id: citel.chat, antilink: "true" })
                             .save()
-                        return citel.reply(' Antilink Enabled Successfully')
+                        return citel.reply(' Hai 🤝,Antilink successfully enabled')
                     } else {
                         if (checkgroup.antilink == "true") return citel.reply("Antilink was alredy  enabled here.")
                         await sck.updateOne({ id: citel.chat }, { antilink: "true" })

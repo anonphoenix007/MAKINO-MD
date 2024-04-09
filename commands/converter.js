@@ -222,7 +222,7 @@ cmd({
                 let text = tiny(
                     "Fancy text generator\n\nExample: .fancy 56 STAR\n\n"
                 );
-                listall("STAR -MD").forEach((txt, num) => {
+                listall("SMAKINO -MD").forEach((txt, num) => {
                     text += `${(num += 1)} ${txt}\n`;
                 });
                 return await citel.reply(text);

@@ -6,20 +6,35 @@ Secktor.cmd({
         },
         async(Void, citel) => {
             const { commands } = require('../lib');
-            let str = `
+            /*let str = `
 ┏━━━━━•❃〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙❃•━━━━━┓`
             str += `
 ┃ ⛥┏━━━━━•❃°•°•━━━━━•❃°•°•      
 •͙͙✧User: ${citel.pushName}
 •͙͙✧Theme: ${tlang().title}
 •͙͙✧ Prefix: ${prefix}
-•͙͙✧ Owner: ${Config.ownername}
+•͙͙✧ Owner: Tᴀɪʀᴀ Mᴀᴋɪɴᴏ
 •͙͙✧ Commands: ${commands.length}
 •͙͙✧ Uptime: ${runtime(process.uptime())}
 •͙͙✧Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 •͙͙✧𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐒𝐓𝐀𝐑-𝐌𝐃
 •͙͙✧⃝┗━━━━━•❃°•°•━━━━━•❃°•°•
-┗━━━━━•❃°•°•━━━━━•❃°•°•\n`
+┗━━━━━•❃°•°•━━━━━•❃°•°•\n`*/
+			let str +=`
+┌───═[ *MAKINO-MD* ]═──▸
+│╭────────────···▸
+┴│▸
+⬡│▸ User:- ${citel.pushName}
+⬡│▸ Theme:- ${tlang().title}
+⬡│▸ Owner:- Tᴀɪʀᴀ Mᴀᴋɪɴᴏ
+⬡│▸ Uptime:- ${runtime(process.uptime())}
+⬡│▸ Plugins:- ${commands.length}
+⬡│▸ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+┬│▸
+│╰─────────────···▸
+└───────────────···▸
+
+
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
