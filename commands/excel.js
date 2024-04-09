@@ -754,7 +754,7 @@ cmd({
                 await Void.groupSettingUpdate(citel.chat, "announcement")
                     //.then((res) => reply(`Group Chat Muted :)`))
                     .then((res) => reply('〖 *Group settings changed* 〗\nGroup settings has been changed\n Now Only Admin can send messages\n\nMAKINO-MD.')
-                    .catch((err) => console.log(err));
+                    //.catch((err) => console.log(err));
             } else if (text.split(" ")[0] === "open") {
                 await Void.groupSettingUpdate(citel.chat, "not_announcement")
                     //.then((res) => reply(`Group Chat Unmuted :)`))
