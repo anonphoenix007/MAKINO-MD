@@ -118,6 +118,16 @@ If You don't have a account in Heroku. Create a account.
 <h1 align="center"> MAKINO-MD 🙂‍↕
 </p></p>
 
+<h2 align="center">  NOTICE   </h2>
+
+   
+## 
+
+- *MAKINO-MD is not made by `WhatsApp Inc.` misusing the bot might `ban` your `WhatsApp account!`*
+- *In that case, I'm not responsible for banning your account.*
+- *Use MAKINO-MD at your own risk by keeping this warning in mind.*
+
+
 Makino ©2024
 Frederick ©2024
 
