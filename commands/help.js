@@ -9,7 +9,7 @@ Secktor.cmd({
         }), 
 	async(Void, citel) => {
 	    const { commands } = require('../lib'); 
-            let menuu = `┎━═══{ *『` + fancytext(Config.botname+ ` 』* }═══━⊷❖`
+            let menuu = `┎━═══{ *『` + fancytext(Config.botname) + ` 』* }═══━⊷❖`
             menuu += `
 ✯╭────────────···❖
 ┻✯│
