@@ -6,10 +6,10 @@ Secktor.cmd({
 	    desc: "list available commands",
 	    category: "general",
             react: "🍀" 
-        },
+        }),
 	await sock.SendMessage(
-    id,
-    { audio: { url: "./Media/Makino-Md2.mp3" }, mimetype: 'audio/mp3' }
+     id,
+    { audio: { url: "./Media/Makino-Md2.mp3" }, mimetype: 'audio/mp3' },
     { url: "Media/Makino-Md2.mp3" },
 ),
         
