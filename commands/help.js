@@ -6,11 +6,10 @@ Secktor.cmd({
 	    desc: "list available commands",
 	    category: "general",
             react: "🍀" 
-        }), 
-	async(Void, citel) => {
-	    const { commands } = require('../lib'); 
-            let menuu = `┎━═══{ *『` + fancytext(Config.botname) + ` 』* }═══━⊷❖`
-            menuu += `
+            }, async(Void, citel) => {
+	       const { commands } = require('../lib'); 
+               let menuu = `┎━═══{ *『` + fancytext(Config.botname) + ` 』* }═══━⊷❖`
+               menuu += `
 ✯╭────────────···❖
 ┻✯│
 │✯│◦➛User ➫  ${citel.pushName} 
@@ -417,15 +416,11 @@ Secktor.cmd({
 ┳✯│
 ┃✯╰────────────···❖
 ╰━═════════════━❖`
-	  await Void.SendMessage(
-     id,
-    { audio: { url: "./Media/Makino-Md2.mp3" }, mimetype: 'audio/mp3' },
-    { url: "Media/Makino-Md2.mp3" }
-    ),
+	  await Void.SendMessage(id, { audio: { url: "./Media/Makino-Md2.mp3" }, mimetype: 'audio/mp3' }, { url: "Media/Makino-Md2.mp3" } )
 	//return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str }) 
-          //Void.sendMessage(citel.chat, {  caption: menuu })
-	   citel.reply(menuu)
-		
+          Void.sendMessage(citel.chat, {  caption: menuu })
+	   //citel.reply(menuu)
+})
 Secktor.cmd({
             pattern: "list",
             desc: "list menu",
