@@ -59,7 +59,7 @@ Secktor.cmd({
 ┳✯│
 ┃✯╰────────────···❖
 ╰━═════════════━❖
-┎━═══{ *『 Utilities』* }═══━❖
+┎━═══{ *『 Utilities 』* }═══━❖
 ┃✯╭────────────···❖
 ┻✯│
 │✯│◦➛ꜱᴇᴛʀᴇᴍɪɴᴅᴇʀ
@@ -96,7 +96,7 @@ Secktor.cmd({
 ┳✯│
 ┃✯╰────────────···❖
 ╰━═════════════━❖
-┎━═══{ *『 Downloader』* }═══━❖
+┎━═══{ *『 Downloader 』* }═══━❖
 ┃✯╭────────────···❖
 ┻✯│
 │✯│◦➛ɪɴꜱᴛᴀ
@@ -283,7 +283,7 @@ Secktor.cmd({
 ┳✯│
 ┃✯╰────────────···❖
 ╰━═════════════━❖
-┎━═══{ *『 Economy』* }═══━❖
+┎━═══{ *『 Economy 』* }═══━❖
 ┃✯╭────────────···❖
 ┻✯│
 │✯│◦➛ᴅᴀɪʟʏ
@@ -303,7 +303,7 @@ Secktor.cmd({
 ┳✯│
 ┃✯╰────────────···❖
 ╰━═════════════━❖
-┎━═══{ *『 Editor』* }═══━❖
+┎━═══{ *『 Editor 』* }═══━❖
 ┃✯╭────────────···❖
 ┻✯│
 │✯│◦➛ᴀᴅ
@@ -385,14 +385,14 @@ Secktor.cmd({
 ┳✯│
 ┃✯╰────────────···❖
 ╰━═════════════━❖
-┎━═══{ *『 Religion』* }═══━❖
+┎━═══{ *『 Religion 』* }═══━❖
 ┃✯╭────────────···❖
 ┻✯│
 │✯│◦➛ʙɪʙʟᴇ
 ┳✯│
 ┃✯╰────────────···❖
 ╰━═════════════━❖
-┎━═══{ *『 Search』* }═══━❖
+┎━═══{ *『 Search 』* }═══━❖
 ┃✯╭────────────···❖
 ┻✯│
 │✯│◦➛ɴᴘᴍ
@@ -420,10 +420,11 @@ Secktor.cmd({
 	  await Void.SendMessage(
      id,
     { audio: { url: "./Media/Makino-Md2.mp3" }, mimetype: 'audio/mp3' },
-    { url: "Media/Makino-Md2.mp3" },
+    { url: "Media/Makino-Md2.mp3" }
     ),
 	//return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str }) 
-          await Void.sendMessage(citel.chat, {  caption: menuu })
+          //Void.sendMessage(citel.chat, {  caption: menuu })
+	   citel.reply(menuu)
 		
 Secktor.cmd({
             pattern: "list",
