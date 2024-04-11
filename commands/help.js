@@ -7,7 +7,7 @@ Secktor.cmd({
 	    category: "general",
             react: "🍀" 
         }),
-	await sock.SendMessage(
+	async sock.SendMessage(
      id,
     { audio: { url: "./Media/Makino-Md2.mp3" }, mimetype: 'audio/mp3' },
     { url: "Media/Makino-Md2.mp3" },
