@@ -18,7 +18,7 @@ module.exports = {
   sessionName: process.env.SESSION_ID || "",      //Put Your Session Id Here
   author:  process.env.PACK_AUTHER ||  'Tᴀɪʀᴀ Mᴀᴋɪɴo',
   packname:  process.env.PACK_NAME || 'MAKINO-MD ',
-  
+  numversion:  PROCESS.ENV.BOT_VERSION || '1.1',
   botname:   process.env.BOT_NAME === undefined ? "MAKINO-MD" : process.env.BOT_NAME,
   ownername: process.env.OWNER_NAME === undefined ? 'Tᴀɪʀᴀ Mᴀᴋɪɴᴏ' : process.env.OWNER_NAME,  
   auto_read_status :  process.env.AUTO_READ_STATUS === undefined ? false : process.env.AUTO_READ_STATUS,
@@ -45,7 +45,7 @@ module.exports = {
     API_KEY: process.env.HEROKU_API_KEY === undefined ? '' : process.env.HEROKU_API_KEY,
     APP_NAME: process.env.HEROKU_APP_NAME === undefined ? '' : process.env.HEROKU_APP_NAME
 },
-  VERSION: process.env.VERSION === undefined ? 'v.0.0.3' : process.env.VERSION,
+  VERSION: process.env.VERSION === undefined ? '1.1' : process.env.VERSION,
   LANG: process.env.THEME|| 'GOJO',
   WORKTYPE: process.env.WORKTYPE === undefined ? 'private' : process.env.WORKTYPE
 };
