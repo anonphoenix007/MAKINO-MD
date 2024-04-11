@@ -18,7 +18,7 @@ module.exports = {
   sessionName: process.env.SESSION_ID || "",      //Put Your Session Id Here
   author:  process.env.PACK_AUTHER ||  'Tᴀɪʀᴀ Mᴀᴋɪɴo',
   packname:  process.env.PACK_NAME || 'MAKINO-MD ',
-  numversion:  PROCESS.ENV.BOT_VERSION || '1.1',
+  numversion:  process.ENV.BOT_VERSION || '1.1',
   botname:   process.env.BOT_NAME === undefined ? "MAKINO-MD" : process.env.BOT_NAME,
   ownername: process.env.OWNER_NAME === undefined ? 'Tᴀɪʀᴀ Mᴀᴋɪɴᴏ' : process.env.OWNER_NAME,  
   auto_read_status :  process.env.AUTO_READ_STATUS === undefined ? false : process.env.AUTO_READ_STATUS,
