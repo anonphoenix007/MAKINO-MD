@@ -11,7 +11,8 @@ Secktor.cmd({
 	    category: "general",
             react: "🍀",
 	    filename: __filename
-            }, async(Void, citel) => {
+            }, 
+	    async(Void, citel) => {
 	       const { commands } = require('../lib'); 
                let menuu = `┎━═══{ *『` + fancytext(Config.botname) + ` 』* }═══━⊷❖`
                menuu += `
@@ -424,20 +425,35 @@ Secktor.cmd({
 🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ
 ʙʏ Tᴀɪʀᴀ Mᴀᴋɪɴᴏ
 `
-	  let menump = '../media/Makino-Md22.mp3'	
+	  /*let menump = '../media/Makino-Md22.mp3'	
 	  let bufff = fs.readFileSync(menump);
           Void.sendMessage(
 		  citel.chat, {
                   audio: bufff,
 		  mimetype: 'audio/mp3',
 		  });
-	  fs.unlinkSync(ran);
-			  
-	  //await Void.SendMessage(id, { audio: { url: "./Media/Makino-Md2.mp3" }, mimetype: 'audio/mp3' }, { url: "Media/Makino-Md2.mp3" } )
-	//return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str }) 
-          //Void.sendMessage(citel.chat, {  caption: menuu })
-	  citel.reply(menuu)
-});
+	  fs.unlinkSync(ran);*/
+	buttonMessaged = {
+             //image: { url: await botpic() },
+             caption: menuu,
+             footer: tlang().footer,
+             headerType: 4,
+             contextInfo: {
+                 externalAdReply: {
+                     title: "MAKINO-MD",
+                     body: "Command List",
+                     thumbnail: log0,
+                     mediaType: 4,
+                     mediaUrl: '',
+                     sourceUrl: ``,
+                 },
+             },
+         };
+         return await Void.sendMessage(citel.chat, buttonMessaged, {
+             quoted: citel,
+         });
+
+	    });
 Secktor.cmd({
             pattern: "list",
             desc: "list menu",
