@@ -110,7 +110,7 @@ Sektor.cmd({
   react: "✅"
 }, async(Void, citel) => {
   let buttonM = {
-    audio: fs.readFileSync("../media/Makino-Md2.mp3");
+    audio: fs.readFileSync("../media/Makino-Md2.mp3"),
                     mimetype: 'audio/mpeg',
                     //fileName: titleYt + ".mp3",
                     ptt: true,
