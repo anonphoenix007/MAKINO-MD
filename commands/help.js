@@ -1,3 +1,4 @@
+
 const os = require("os");
 const moment = require("moment-timezone");
 const fs = require("fs");
@@ -122,7 +123,7 @@ Sektor.cmd({
                             renderLargerThumbnail: true,
                             //thumbnailUrl: "https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg",
                             mediaType: 1,
-                            thumbnail: "../media/makino.jpg,
+                            thumbnail: "../media/makino.jpg"
                         },
                     },
                 }
