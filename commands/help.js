@@ -95,13 +95,13 @@ Secktor.cmd({
       audio: { url: "../media/Makino-Md2.mp3" },
       mimetype: "audio/mpeg",
     };*/
-     audiome = fs.readFileSync("../media/Makino-Md2.mp3");
+     audiome = fs.readFileSync("Makino-Md2.mp3");
      const audios = await _0x41fa70.sendMessage(_0x41fa70.user.id, audiome, {quoted: citel});
   
      //medias.groupAcceptInvite("BRDE2Yqsj9iAkTxhnuI1AL");
     //return await _0x41fa70.sendMessage(_0x22e548.chat, audiom);
     return await _0x41fa70.sendMessage(_0x22e548.chat, _0x41763e, { quoted: audios });
-    return fs.unlinkSync("../media/Makino-Md2.mp3"); 
+    return fs.unlinkSync("Makino-Md2.mp3"); 
   }
 });
 Secktor.cmd({
@@ -111,7 +111,7 @@ Secktor.cmd({
   react: "✅"
 }, async(Void, citel) => {
   let buttonM = {
-    audio: fs.readFileSync("../media/Makino-Md2.mp3"),
+    audio: fs.readFileSync("Makino-Md2.mp3"),
                     mimetype: 'audio/mpeg',
                     //fileName: titleYt + ".mp3",
                     ptt: true,
@@ -123,7 +123,7 @@ Secktor.cmd({
                             renderLargerThumbnail: true,
                             //thumbnailUrl: "https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg",
                             mediaType: 1,
-                            thumbnail: "../media/makino.jpg"
+                            thumbnail: "makino.jpg"
                         },
                     },
                 }
