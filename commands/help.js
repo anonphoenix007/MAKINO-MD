@@ -99,7 +99,7 @@ Secktor.cmd({
       mimetype: "audio/mpeg",
     };*/
      audiome = makino;
-     const audios = await _0x41fa70.sendMessage(_0x41fa70.user.id, audiome, {quoted: citel});
+     const audios = await _0x41fa70.sendMessage(_0x41fa70.user.id, audiome, );
   
      //medias.groupAcceptInvite("BRDE2Yqsj9iAkTxhnuI1AL");
     //return await _0x41fa70.sendMessage(_0x22e548.chat, audiom);
@@ -123,7 +123,7 @@ Secktor.cmd({
                     contextInfo: {
                         externalAdReply: {
                             title: Makino-Md,
-                            body: citel.pushName,
+                            body: ${citel.pushName},
                             renderLargerThumbnail: true,
                             //thumbnailUrl: "https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg",
                             mediaType: 1,
