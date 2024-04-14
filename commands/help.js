@@ -87,9 +87,9 @@ Secktor.cmd({
     }
     _0x2ce686 += "🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ\n\nᴄʀᴇᴀᴛᴇᴅ ʙʏ Tᴀɪʀᴀ Mᴀᴋɪɴᴏ 🐤 ";
     let _0x41763e = {
-      /*image: {
+      image: {
         url: await botpic()
-      },*/
+      },
       caption: _0x2ce686
     };
      /* let buttonM = {
@@ -110,7 +110,7 @@ Secktor.cmd({
                     },
                 }
                 await _0x41fa70.sendMessage(_0x22e548.chat, buttonM, { quoted: _0x22e548 });*/
-    return await _0x41fa70.sendMessage(_0x22e548.chat, _0x2ce686 );
+    return await _0x41fa70.sendMessage(_0x22e548.chat, _0x41763e );
     //return fs.unlinkSync(makino); 
   }
 });
