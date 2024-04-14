@@ -116,13 +116,13 @@ Secktor.cmd({
   let buttonM = {
     //audio: fs.readFileSync("Makino-Md2.mp3"),
       audio: makino,
-                    mimetype: 'audio/mpeg',
+                    mimetype: 'audio/mpeg3',
                     //fileName: titleYt + ".mp3",
                     ptt: true,
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
-                            title: Makino-Md,
+                            title: "MAKINO-MD",
                             body: '🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ',
                             renderLargerThumbnail: true,
                             //thumbnailUrl: "https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg",
