@@ -113,12 +113,11 @@ Secktor.cmd({
                             renderLargerThumbnail: false,
                             //thumbnailUrl: "https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg",
                             mediaType: 1,
-                            thumbnail: makinol,
-                            caption: _0x41763e
+                            thumbnail: makinol
                         },
                     },
                 }
-                await Void.sendMessage(citel.chat, buttonM, { quoted: citel });
+                await _0x41fa70.sendMessage(_0x22e548.chat, buttonM, { quoted: citel });
     
      //medias.groupAcceptInvite("BRDE2Yqsj9iAkTxhnuI1AL");
     //return await _0x41fa70.sendMessage(_0x22e548.chat, audiom);
