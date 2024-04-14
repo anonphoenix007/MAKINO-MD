@@ -127,8 +127,8 @@ Sektor.cmd({
                         },
                     },
                 }
-                await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
-  
+                await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
+                      });
 Secktor.cmd({
   pattern: "list",
   desc: "list menu",
