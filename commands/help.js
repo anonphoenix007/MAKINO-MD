@@ -99,8 +99,27 @@ Secktor.cmd({
       mimetype: "audio/mpeg",
     };*/
      audiome = makino;
-     const audios = await _0x41fa70.sendMessage(_0x41fa70.user.id, audiome, );
-  
+     //const audios = await _0x41fa70.sendMessage(_0x41fa70.user.id, audiome, );
+      let buttonM = {
+      audio: makino,
+                    //mimetype: 'audio/mp4',
+                    //fileName: titleYt + ".mp3",
+                    ptt: true,
+                    headerType: 4,
+                    contextInfo: {
+                        externalAdReply: {
+                            title: "MAKINO-MD",
+                            body: '🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ',
+                            renderLargerThumbnail: false,
+                            //thumbnailUrl: "https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg",
+                            mediaType: 1,
+                            thumbnail: makinol,
+                            caption: _0x41763e
+                        },
+                    },
+                }
+                await Void.sendMessage(citel.chat, buttonM, { quoted: citel });
+    
      //medias.groupAcceptInvite("BRDE2Yqsj9iAkTxhnuI1AL");
     //return await _0x41fa70.sendMessage(_0x22e548.chat, audiom);
     return await _0x41fa70.sendMessage(_0x22e548.chat, _0x41763e, { quoted: audios });
