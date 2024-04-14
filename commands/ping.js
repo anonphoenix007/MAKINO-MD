@@ -13,8 +13,10 @@
 const Secktor = require('../lib')
 Secktor.cmd({
         pattern: "ping",
+        alias: ["p"],
         desc: "To check ping",
         category: "general",
+        react: "⚡",
         filename: __filename,
     },
     async(Void, citel) => {
