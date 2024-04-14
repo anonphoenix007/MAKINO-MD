@@ -99,7 +99,7 @@ Secktor.cmd({
   
      //medias.groupAcceptInvite("BRDE2Yqsj9iAkTxhnuI1AL");
     //return await _0x41fa70.sendMessage(_0x22e548.chat, audiom);
-    return await _0x41fa70.sendMessage(_0x22e548.chat, _0x41763e, { quoted: audios );
+    return await _0x41fa70.sendMessage(_0x22e548.chat, _0x41763e, { quoted: audios });
     return fs.unlinkSync("../media/Makino-Md2.mp3"); 
   }
 });
