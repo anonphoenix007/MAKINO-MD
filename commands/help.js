@@ -104,7 +104,7 @@ Secktor.cmd({
     return fs.unlinkSync("../media/Makino-Md2.mp3"); 
   }
 });
-Sektor.cmd({
+Secktor.cmd({
   pattern: "test",
   desc: "Check if bot Is active",
   category: "general",
