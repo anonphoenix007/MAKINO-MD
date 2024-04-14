@@ -131,7 +131,7 @@ Secktor.cmd({
                         },
                     },
                 }
-                await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
+                await Void.sendMessage(citel.chat, buttonM, { quoted: citel });
                       });
 Secktor.cmd({
   pattern: "list",
