@@ -116,7 +116,7 @@ Secktor.cmd({
   let buttonM = {
     //audio: fs.readFileSync("Makino-Md2.mp3"),
       audio: makino,
-                    mimetype: 'audio/mp4',
+                    //mimetype: 'audio/mp4',
                     //fileName: titleYt + ".mp3",
                     ptt: true,
                     headerType: 4,
