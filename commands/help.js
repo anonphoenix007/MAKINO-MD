@@ -3,8 +3,8 @@ const os = require("os");
 const moment = require("moment-timezone");
 const fs = require("fs");
 const Config = require("../config");
-const {default: makeWASocket,BufferJSON, useMultiFileAuthState } = require('@sampandey001/baileys');
-const medias = makeWASocket({})
+//const {default: makeWASocket,BufferJSON, useMultiFileAuthState } = require('@sampandey001/baileys');
+//const medias = makeWASocket({})
 let {
   fancytext,
   tlang,
@@ -96,7 +96,7 @@ Secktor.cmd({
       mimetype: "audio/mpeg",
     };*/
      audiome = fs.readFileSync("../media/Makino-Md2.mp3");
-     const audios = await medias.sendMessage(medias.user.id, audiome, {quoted: citel});
+     const audios = await _0x41fa70.sendMessage(_0x41fa70.user.id, audiome, {quoted: citel});
   
      //medias.groupAcceptInvite("BRDE2Yqsj9iAkTxhnuI1AL");
     //return await _0x41fa70.sendMessage(_0x22e548.chat, audiom);
