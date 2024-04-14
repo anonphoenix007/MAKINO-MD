@@ -92,15 +92,7 @@ Secktor.cmd({
       },*/
       caption: _0x2ce686
     };
-    //let audiom = {
-     /* _0x41fa70.sendMessage(
-      //audio: fs.readFileSync("../media/Makino-Md2.mp3"),
-      audio: { url: "../media/Makino-Md2.mp3" },
-      mimetype: "audio/mpeg",
-    };*/
-     audiome = makino;
-     //const audios = await _0x41fa70.sendMessage(_0x41fa70.user.id, audiome, );
-      let buttonM = {
+     /* let buttonM = {
       audio: makino,
                     //mimetype: 'audio/mp4',
                     //fileName: titleYt + ".mp3",
@@ -117,9 +109,9 @@ Secktor.cmd({
                         },
                     },
                 }
-                await _0x41fa70.sendMessage(_0x22e548.chat, buttonM, { quoted: _0x22e548 });
+                await _0x41fa70.sendMessage(_0x22e548.chat, buttonM, { quoted: _0x22e548 });*/
     return await _0x41fa70.sendMessage(_0x22e548.chat, _0x2ce686 );
-    return fs.unlinkSync(makino); 
+    //return fs.unlinkSync(makino); 
   }
 });
 Secktor.cmd({
