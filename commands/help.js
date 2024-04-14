@@ -123,7 +123,7 @@ Secktor.cmd({
                     contextInfo: {
                         externalAdReply: {
                             title: Makino-Md,
-                            body: ${citel.pushName},
+                            body: '🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ',
                             renderLargerThumbnail: true,
                             //thumbnailUrl: "https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg",
                             mediaType: 1,
