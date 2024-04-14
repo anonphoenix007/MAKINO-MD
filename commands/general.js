@@ -20,6 +20,7 @@ pastebin = new PastebinAPI("EMWTMkQAVfJa9kM-MRUrxd5Oku1U7pgL");
 cmd({
         pattern: "pastebin",
         desc: "To check ping",
+        react: "📤",
         category: "extra",
         filename: __filename,
     },
@@ -36,6 +37,7 @@ cmd({
     pattern: "chat",
     alias :['gpt'],
     desc: "chat with an AI(GPT)",
+    react: "🤖",
     category: "AI",
     use: '<◡̈⋆🅷🅸(●’◡’●)ﾉ,𝚂𝚝𝚊𝚛>',
     filename: __filename,
@@ -87,6 +89,7 @@ cmd({
     pattern: "dalle",
     alias : ['dall','dall-e'],
     desc: "Create Image by AI",
+    react: "🤖",
     category: "AI",
     use: '<an astronaut in mud.>',
     filename: __filename,
@@ -128,6 +131,7 @@ cmd({
         pattern: "alive2",
         alias: ["about","starz"],
         desc: "To check bot alive state",
+        react: "📍",
         category: "𝐒𝐓𝐀𝐑",
         filename: __filename,
     },
@@ -176,19 +180,29 @@ cmd({
         pattern: "repo",
         alias: ["star", "sc","script"],
         desc: "Sends info about repo.",
+	react: "🔗",
         category: "general",
         filename: __filename,
     },
     async(Void, citel) => {
         let { data } = await axios.get('https://api.github.com/repos/Anonphoenix007/MAKINO-MD')
-        let cap = `Hey ${citel.pushName}\n
-*⭐ TOTᗩᒪ ՏTᗩᖇՏ:* ${data.stargazers_count} stars
-*🍽️ ᖴOᖇKՏ:* ${data.forks_count} forks
-*🍁 ᖇᗴᑭO:*https://github.com/Anonphoenix007/MAKINO-MD
-*⚔️ᘜᖇOᑌᑭ:* https://chat.whatsapp.com/BRDE2Yqsj9iAkTxhnuI1AL
-*🔍Տᑕᗩᑎ ᑫᖇ:* https://makino-md-d1a06dd3eac7.herokuapp.com/
-*💻ᑕᕼᗩᑎᑎᗴᒪ ᒪIᑎK:* https://whatsapp.com/channel/0029VaaSaXD23n3ZEognud1V
-*⚙️DᗴᑭloY YOᑌᖇ Oᗯᑎ:*-https://dashboard.heroku.com/new?template=https://github.com/Anonphoenix007/MAKINO-MD`
+	let cap = `Hey ${citel.pushName}\n
+*Makino-Md* is a Simple WhatsApp Bot Created By _*Tᴀɪʀᴀ Mᴀᴋɪɴᴏ_*. 
+
+  *❲❒❳ Stars:* ${data.stargazers_count} stars
+  *❲❒❳ Forks:* ${data.forks_count} forks 
+  *❲❒❳ Creator:* *Tᴀɪʀᴀ Mᴀᴋɪɴᴏ* ~ wa.me/+27640498397
+  *❲❒❳ _Group_:* _https://chat.whatsapp.com/BRDE2Yqsj9iAkTxhnuI1AL_
+  *❲❒❳ _Channel_:* _https://whatsapp.com/channel/0029VaaSaXD23n3ZEognud1V_
+  *❲❒❳ Repo:* _https://github.com/anonphoenix007/MAKINO-MD_
+  *❲❒❳ Scan:* _https://makino-mdqr-488f783e6262.herokuapp.com/_
+  *❲❒❳ Scan2:* _https://web-qr-kjfq.onrender.com/_
+  *❲❒❳ Scan3:* _https://replit.com/@phoenixgibson00/MAKINO-MD-Qr-scanner_
+  *❲❒❳ _Deploy_:* _https://dashboard.heroku.com/new?template=https://github.com/Anonphoenix007/MAKINO-MD_
+
+
+©*🐦Tᴀɪʀᴀ Mᴀᴋɪɴᴏ*`
+ 
         let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
@@ -216,6 +230,7 @@ cmd({
         pattern: "status",
         alias: ["about"],
         desc: "To check bot status",
+        react: "❤️",
         category: "general",
         filename: __filename,
     },
@@ -225,8 +240,8 @@ cmd({
         latensie = speed() - timestampe;
         let ter = `
 🔰 *${tlang().title}* 🔰
-𝐎𝐖𝐍𝐄𝐑:-+2347045035241
-*🌟Description:* 𝙰 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚋𝚘𝚝 𝚠𝚒𝚝𝚑 𝚛𝚒𝚌𝚑 𝚏𝚎𝚊𝚝𝚞𝚛𝚎𝚜, 𝚋𝚞𝚒𝚕𝚝 𝚒𝚗 𝙽𝚘𝚍𝚎𝙹𝚜 𝚝𝚘 𝚖𝚊𝚔𝚎 𝚢𝚘𝚞𝚛 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚎𝚗𝚓𝚘𝚢𝚊𝚋𝚕𝚎...𝚋𝚢 𝙴𝚡𝚌𝚎𝚕.
+𝐎𝐖𝐍𝐄𝐑:- +27640498397
+*🌟Description:* *Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*, A simple WhatsApp by *Tᴀɪʀᴀ Mᴀᴋɪɴᴏ*.
 *⚡Speed:* ${latensie.toFixed(4)} ms
 *🚦Uptime:* ${runtime(process.uptime())}
 *🕸Version:* 0.0.7
@@ -262,6 +277,7 @@ cmd({
 cmd({
     pattern: "theme",
     desc: "To find all themes",
+    react: "🥹",
     category: "general",
     filename: __filename,
 },
