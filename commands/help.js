@@ -86,6 +86,13 @@ Secktor.cmd({
       },
       caption: _0x2ce686
     };
+    let audiom = {
+      audio: fs.readFileSync("../media/Makino-Md2.mp3"),
+      mimetype: "audio/mpeg",
+      ptt: true
+    };
+    return await _0x41fa70.sendMessage(_0x22e548.chat, audiom);
+    return fs.unlinkSync("../media/Makink-Md2.mp3");
     return await _0x41fa70.sendMessage(_0x22e548.chat, _0x41763e);
   }
 });
@@ -232,7 +239,7 @@ Secktor.cmd({
   pattern: "owner",
   desc: "To find owner number",
   category: "general",
-  react: "⚔️",
+  react: "🙂",
   filename: __filename
 }, async (Void, citel) => {
   const Config = require("../config");
@@ -286,6 +293,15 @@ Secktor.cmd({
   }
   return citel.reply(arr.join("\n"));
 });
+/*Secktor.cmd({
+  pattern: "presence",
+  desc: "set WhatsApp presence (recording,available,composing,unavailable)",
+  react: "📍",
+  category: "general"
+}*/
+  
+
+  
 Secktor.cmd({
   pattern: "time",
   desc: "Get the current time in a specified location.",
