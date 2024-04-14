@@ -2,7 +2,10 @@
 const os = require("os");
 const moment = require("moment-timezone");
 const fs = require("fs");
+const path = require("path");
 const Config = require("../config");
+const makino = fs.readfilesync(path.resolve(__dirname, './media/Makino-Md2.mp3'));
+const makinol = fs.readfilesync(path.resolve(__dirname, './media/makino.jpg'));
 //const {default: makeWASocket,BufferJSON, useMultiFileAuthState } = require('@sampandey001/baileys');
 //const medias = makeWASocket({})
 let {
@@ -65,7 +68,7 @@ Secktor.cmd({
     const _0x5dd623 = moment.tz("Asia/Kolkata").format("DD/MM/YYYY");
     let _0x16b1ac = await sck1.countDocuments();
     let _0x2ce686 = "┎━═══{ *『 " + fancytext(Config.ownername.split(" ")[0], 58) + " 』* }═══━❖";
-    _0x2ce686 += "```" + ("│┃✯╭────────────···❖\n┻✯│  💂‍♀️ ʜᴇʏ ᴜsᴇʀ  ➫ " + _0x22e548.pushName + "\n│✯│◦➛ 🙂‍↕ ᴄʀᴇᴀᴛᴏʀ ➫ Tᴀɪʀᴀ Mᴀᴋɪɴᴏ\n│✯│◦➛ ⚙️ Mʏᴘʀᴇꜰɪx ➫ 〖" + prefix + "〗\n│✯│◦➛ 👤 Owner ➫ " + Config.ownername + "\n│✯│◦➛ ⏰ ᴜᴘᴛɪᴍᴇ ➫ " + runtime(process.uptime()) + "\n│✯│◦➛ 🧠 ᴍᴇᴍᴏʀʏ " + formatp(os.totalmem() - os.freemem()) + "/" + formatp(os.totalmem()) + "\n┳✯│ ┃✯╰────────────···❖\n╰━═════════════━❖\n\n") + "```";
+    _0x2ce686 += "```" + ("│┃✯╭────────────···❖\n│✯│◦➛ 💂‍♀️ ʜᴇʏ ᴜsᴇʀ  ➫ " + _0x22e548.pushName + "\n│✯│◦➛ 🙂‍↕ ᴄʀᴇᴀᴛᴏʀ ➫ Tᴀɪʀᴀ Mᴀᴋɪɴᴏ\n│✯│◦➛ ⚙️ Mʏᴘʀᴇꜰɪx ➫ 〖" + prefix + "〗\n│✯│◦➛ 👤 Owner ➫ " + Config.ownername + "\n│✯│◦➛ ⏰ ᴜᴘᴛɪᴍᴇ ➫ " + runtime(process.uptime()) + "\n│✯│◦➛ 🧠 ᴍᴇᴍᴏʀʏ " + formatp(os.totalmem() - os.freemem()) + "/" + formatp(os.totalmem()) + "\n┳✯│ ┃✯╰────────────···❖\n╰━═════════════━❖\n\n") + "```";
     for (const _0x32ef0c in _0x185d93) {
       _0x2ce686 += "┎━═══{ *『* " + tiny(_0x32ef0c) + " *』* }═══━❖ \n";
       if (_0x44e062.toLowerCase() == _0x32ef0c.toLowerCase()) {
@@ -77,7 +80,7 @@ Secktor.cmd({
         break;
       } else {
         for (const _0x14efca of _0x185d93[_0x32ef0c]) {
-          _0x2ce686 += " │✯│◦➛" + fancytext(_0x14efca, 1) + "\n";
+          _0x2ce686 += "│✯│◦➛" + fancytext(_0x14efca, 1) + "\n";
         }
         _0x2ce686 += "╰━═════════════━❖\n";
       }
@@ -95,13 +98,13 @@ Secktor.cmd({
       audio: { url: "../media/Makino-Md2.mp3" },
       mimetype: "audio/mpeg",
     };*/
-     audiome = fs.readFileSync("Makino-Md2.mp3");
+     audiome = makino;
      const audios = await _0x41fa70.sendMessage(_0x41fa70.user.id, audiome, {quoted: citel});
   
      //medias.groupAcceptInvite("BRDE2Yqsj9iAkTxhnuI1AL");
     //return await _0x41fa70.sendMessage(_0x22e548.chat, audiom);
     return await _0x41fa70.sendMessage(_0x22e548.chat, _0x41763e, { quoted: audios });
-    return fs.unlinkSync("Makino-Md2.mp3"); 
+    return fs.unlinkSync(makino); 
   }
 });
 Secktor.cmd({
@@ -111,7 +114,8 @@ Secktor.cmd({
   react: "✅"
 }, async(Void, citel) => {
   let buttonM = {
-    audio: fs.readFileSync("Makino-Md2.mp3"),
+    //audio: fs.readFileSync("Makino-Md2.mp3"),
+      audio: makino,
                     mimetype: 'audio/mpeg',
                     //fileName: titleYt + ".mp3",
                     ptt: true,
@@ -123,7 +127,7 @@ Secktor.cmd({
                             renderLargerThumbnail: true,
                             //thumbnailUrl: "https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg",
                             mediaType: 1,
-                            thumbnail: "makino.jpg"
+                            thumbnail: makinol
                         },
                     },
                 }
