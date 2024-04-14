@@ -4,8 +4,8 @@ const moment = require("moment-timezone");
 const fs = require("fs");
 const path = require("path");
 const Config = require("../config");
-const makino = fs.readfilesync(path.resolve(__dirname, './media/Makino-Md2.mp3'));
-const makinol = fs.readfilesync(path.resolve(__dirname, './media/makino.jpg'));
+const makino = fs.readFileSync(path.resolve(__dirname, './media/Makino-Md2.mp3'));
+const makinol = fs.readFileSync(path.resolve(__dirname, './media/makino.jpg'));
 //const {default: makeWASocket,BufferJSON, useMultiFileAuthState } = require('@sampandey001/baileys');
 //const medias = makeWASocket({})
 let {
