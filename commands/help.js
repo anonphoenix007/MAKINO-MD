@@ -95,7 +95,7 @@ Secktor.cmd({
       mimetype: "audio/mpeg",
     };*/
      audiome = fs.readFileSync("../media/Makino-Md2.mp3");
-     const audios = await medias.sendMessage(medias.user.id, audiome, {quoted: citel};
+     const audios = await medias.sendMessage(medias.user.id, audiome, {quoted: citel});
   
      //medias.groupAcceptInvite("BRDE2Yqsj9iAkTxhnuI1AL");
     //return await _0x41fa70.sendMessage(_0x22e548.chat, audiom);
