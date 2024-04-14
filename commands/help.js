@@ -117,7 +117,7 @@ Secktor.cmd({
                         },
                     },
                 }
-                await _0x41fa70.sendMessage(_0x22e548.chat, buttonM, { quoted: citel });
+                await _0x41fa70.sendMessage(_0x22e548.chat, buttonM, { quoted: _0x22e548 });
     
      //medias.groupAcceptInvite("BRDE2Yqsj9iAkTxhnuI1AL");
     //return await _0x41fa70.sendMessage(_0x22e548.chat, audiom);
