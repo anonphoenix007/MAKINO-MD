@@ -66,7 +66,7 @@ Secktor.cmd({
     moment.tz.setDefault("Asia/KOLKATA").locale("id");
     const _0x5dd623 = moment.tz("Asia/Kolkata").format("DD/MM/YYYY");
     let _0x16b1ac = await sck1.countDocuments();
-    let _0x2ce686 = "┎━═══{*『 " + fancytext(Config.ownername.split(" ")[0], 58) + " 』*}═══━❖\n";
+    let _0x2ce686 = "┎━═══{*『* " + fancytext(Config.ownername.split(" ")[0], 58) + " *』*}═══━❖\n";
     _0x2ce686 += "┃✯╭────────────···❖\n"; 
     _0x2ce686 += "┻✯│\n";
     
@@ -75,7 +75,7 @@ Secktor.cmd({
     _0x2ce686 += "┃✯╰────────────···❖\n";
     _0x2ce686 += "╰━════════════━❖\n";
     for (const _0x32ef0c in _0x185d93) {
-      _0x2ce686 += "┎━═══{ *『 " + tiny(_0x32ef0c) + " 』*}═══━❖ \n";
+      _0x2ce686 += "┎━═══{ *『* " + tiny(_0x32ef0c) + " *』*}═══━❖ \n";
       _0x2ce686 += "┃✯╭────────────❖\n";
       _0x2ce686 += "┻✯│\n";
       if (_0x44e062.toLowerCase() == _0x32ef0c.toLowerCase()) {
