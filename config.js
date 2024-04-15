@@ -15,6 +15,7 @@ global.devs = '27640498397'
 global.website = 'https://github.com/Anonphoenix007/MAKINO-MD' //wa.me/+91000000000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg'
 module.exports = {
+  wapresence: process.env.WAPRESENCE || "recording",// recording,composing,available,unavailable
   sessionName: process.env.SESSION_ID || "",      //Put Your Session Id Here
   author:  process.env.PACK_AUTHER ||  'Tᴀɪʀᴀ Mᴀᴋɪɴo',
   packname:  process.env.PACK_NAME || 'MAKINO-MD ',
