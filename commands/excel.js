@@ -2,7 +2,7 @@
 ================================================  
 ▀▄▀ █░ █ █▀ █▀█ █▄░█    
 █░█ █▄ █ █▄ █▄█ █░▀█ 
-ℹ️Excel
+🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ
 ========================================================
  Copyright (C) 2022.                                                                                        
  Licensed under the  GPL-3.0 License;                                                      
@@ -25,6 +25,7 @@ cmd({
             pattern: "join",
             desc: "joins a group using the invitation link",
             category: "owner",
+            react: "🎉",
             use: '<group link.>',
         },
         async(Void, citel, text,{ isCreator }) => {
@@ -45,6 +46,7 @@ cmd({
         pattern: "resetlnk",
         desc: "reset group link.",
         category: "group",
+        react: "⚠️",
         filename: __filename,
     },
          async(Void, citel, text,{ isCreator }) => {
@@ -67,6 +69,7 @@ return citel.reply("*_Sensei,Group Link was Revoked SuccesFully_*");
         alias:["glink"],
         desc: "get group link.",
         category: "group",
+        react: "🫴",
         filename: __filename,
     },
          async(Void, citel, text,{ isCreator }) => {
@@ -79,8 +82,15 @@ return citel.reply("*_Sensei,Group Link was Revoked SuccesFully_*");
 if (!isBotAdmins) return citel.reply(tlang().admin);
 var str1 = await Void.groupInviteCode(citel.chat)
 var str2 ="https://chat.whatsapp.com/"
-var mergedString = `${str2}${str1}`;
-return citel.reply("*_Group Invite Link Is Here 😉_* \n*_"+mergedString+"_*");
+var str3 ="`Here's the group link` ➫ \n'
+var mergedString = `${str3} ${str2}${str1}\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`;
+let picc = {
+    image: {
+        url: await botpic()
+      },
+      caption: mergedString
+    };
+return citel.reply(picc);
 
     }
         )
@@ -90,6 +100,7 @@ cmd({
             alias: ["stk"],
             desc: "Makes sticker of replied image/video.",
             category: "group",
+            react: "🤳",
             use: '<reply to any image/video.>',
         },
         async(Void, citel, text) => {
@@ -136,6 +147,7 @@ cmd({
         pattern: "support",
         desc: "Sends official support link.",
         category: "group",
+        react: "✨",
         filename: __filename,
     },
     async(Void, citel, text) => {
@@ -152,6 +164,7 @@ cmd({
             pattern: "warn",
             desc: "Warns user in Group.",
             category: "group",
+            react: "⚠️",
             filename: __filename,
             use: '<quote|reply|number>',
         },
@@ -169,6 +182,7 @@ cmd({
             pattern: "unblock",
             desc: "Unblocked to the quoted user.",
             category: "owner",
+            react: "🫥",
             filename: __filename,
 
         },
@@ -178,6 +192,7 @@ cmd({
             if (!isCreator) citel.reply(tlang().owner);
             let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
             await Void.updateBlockStatus(users, "unblock")
+            await citel.reply("*User blocked.*");
                 .then((res) => console.log(jsonformat(res)))
                 .catch((err) => console.log(jsonformat(err)));
         }
@@ -187,6 +202,7 @@ cmd({
         pattern: "ujid",
         desc: "get jid of all user in a group.",
         category: "owner",
+        react: "😃",
         filename: __filename,
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -195,7 +211,7 @@ cmd({
                 const participants = citel.isGroup ? await groupMetadata.participants : "";
     let textt = `_Here is jid address of all users of_\n *- ${groupMetadata.subject}*\n\n`
     for (let mem of participants) {
-            textt += `📍 ${mem.id}\n`;
+            textt += `🧸 ${mem.id}\n`;
         }
       citel.reply(textt)
 
@@ -207,6 +223,7 @@ cmd({
         pattern: "tagall",
         desc: "Tags every person of group.",
         category: "group",
+        react: "✨",
         filename: __filename,
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -224,8 +241,9 @@ cmd({
 ➲ *Author:* ${Config.ownername} ♕
 `
         for (let mem of participants) {
-            textt += `📍 @${mem.id.split("@")[0]}\n`;
-        }
+            textt += `💎 @${mem.id.split("@")[0]}\n`;
+            textt += `'🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ`';
+             }
         Void.sendMessage(citel.chat, {
             text: textt,
             mentions: participants.map((a) => a.id),
@@ -299,6 +317,7 @@ cmd({
         pattern: "kik",
         desc: "Kick all numbers from a certain country",
         category: "group",
+        react: "⚠️",
         filename: __filename,
     },
     async(Void, citel, text,{ isCreator }) => 
@@ -333,13 +352,14 @@ cmd({
                 }
         }
         if(hmanykik == 0) return await citel.reply(`*_Oops😴, There Is No User Found With ${find} Country Code_*`)
-        else return await citel.reply(`*_Hurray, ${hmanykik.toString()} Users With ${find} Country Code kicked🙂‍↕_*`)
+        else return await citel.reply(`*_Hurray, ${hmanykik.toString()} Users With ${find} Country Code kicked🙂‍↕_*\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`)
 })
 //---------------------------------------------------------------------------
 cmd({
         pattern: "num",
         desc: "get all numbers from a certain country",
         category: "group",
+        react: "❤️",
         filename: __filename,
     },
     async(Void, citel, text,{ isCreator }) => 
@@ -364,6 +384,7 @@ cmd({
             pattern: "rswarn",
             desc: "Deletes all previously given warns of quoted user.",
             category: "group",
+            react: "🥹 ",
             filename: __filename,
             use: '<quote|reply|number>',
         },
@@ -371,7 +392,7 @@ cmd({
             if (!isCreator) return citel.reply(tlang().owner)
             if (!citel.quoted) return citel.reply('Umm,You need to reply to a user..')
             await warndb.deleteOne({ id: citel.quoted.sender.split('@')[0] + 'warn' });
-            return citel.reply('User is free for now 🫡.\n.')
+            return citel.reply(`User is free for now 🫡.\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`);
         }
     )
     //---------------------------------------------------------------------------
@@ -379,6 +400,7 @@ cmd({
             pattern: "poll",
             desc: "Makes poll in group.",
             category: "group",
+            react: "❔",
             filename: __filename,
             use: `question;option1,option2,option3.....`,
         },
@@ -406,6 +428,7 @@ cmd({
             pattern: "profile",
             desc: "Shows profile of user.",
             category: "group",
+            react: "🙊",
             filename: __filename,
         },
         async(Void, citel, text) => {
@@ -482,7 +505,7 @@ cmd({
 *🧩Role:* ${role}
 *🍁Level:* ${userq.level}
 *📥 Total Messages* ${ttms}
-*Powered by MAKINO-MD*
+*Powered by 🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*
 `;
             let buttonMessage = {
                 image: {
@@ -503,6 +526,7 @@ cmd({
             pattern: "rank",
             desc: "Sends rank card of user.",
             category: "group",
+            react: "🎉",
             filename: __filename,
         },
         async(Void, citel, text) => {
@@ -584,13 +608,15 @@ cmd({
             alias: ["deck"],
             desc: "To check leaderboard",
             category: "general",
+            react: "🏆",
             filename: __filename,
         },
         async(Void, citel) => {
             const fetchlb = await Levels.fetchLeaderboard("RandomXP", 5);
             let leadtext = `
 *-------------------------------*
-*----● LeaderBoard ● -----*
+*--------● LeaderBoard ●--------*
+*--------● 🐦Makino md ●--------*
 *-------------------------------*
 \n\n`
             for (let i = 0; i < fetchlb.length; i++) {
@@ -658,6 +684,8 @@ cmd({
             pattern: "promote",
             desc: "Make a replied/quoted user an admin",
             category: "group",
+            react: "🎉",
+
             filename: __filename,
             use: '<quote|reply|number>',
         },
@@ -674,6 +702,7 @@ cmd({
                 let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
                 if (!users) return;
                 await Void.groupParticipantsUpdate(citel.chat, [users], "promote");
+                await citel.reply(`User promoted successfully🥳.\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`);
             } catch {
                 //                citel.reply(tlang().botAdmin);
 
@@ -685,6 +714,7 @@ cmd({
             pattern: "kick",
             desc: "Kicks replied/quoted user from group.",
             category: "group",
+            react: "🦶",
             filename: __filename,
             use: '<quote|reply|number>',
         },
@@ -701,6 +731,8 @@ cmd({
                 let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
                 if (!users) return;
                 await Void.groupParticipantsUpdate(citel.chat, [users], "remove");
+                await citel.reply(`User successfully Kicked from group🫥.\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`);
+
             } catch {
                 //                citel.reply(tlang().botAdmin);
 
@@ -738,6 +770,7 @@ cmd({
 cmd({
             pattern: "gc",
             desc: "mute and unmute group.",
+            react: "🤡",
             category: "group",
             filename: __filename,
         },
@@ -761,7 +794,7 @@ cmd({
  745                     .catch((err) => console.log(err));
             } else {
 
-                return citel.reply(`Group Mode:\n${prefix}group open- to open\n${prefix}group close- to close`);
+                return citel.reply(`Group Mode:\n${prefix}group open- to open\n${prefix}group close- to close\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`);
             }
         }
     )
@@ -770,6 +803,7 @@ cmd({
             pattern: "grouppic",
             desc: "Sets a profile pic in Group..",
             category: "group",
+            react: "🖼️",
             filename: __filename,
         },
         async(Void, citel, text) => {
@@ -802,11 +836,12 @@ cmd({
             alias:["hidetag"],
             desc: "Tags every participants in a group chat.",
             category: "group",
+            react: "📳",
             filename: __filename,
             use: '<text>',
         },
         async(Void, citel, text , {isCreator}) => {
-        if(!text && !citel.quoted) return citel.reply(`*Example : ${prefix}tag Hi <Text here>*` )
+        if(!text && !citel.quoted) return citel.reply('*`Example : ${prefix}tag Hi <Text here>`*')
             if(!text){text = citel.quoted.text;}
             if (!citel.isGroup) return citel.reply(tlang().group);
             const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
@@ -822,6 +857,7 @@ cmd({
             pattern: "group",
             desc: "mute and unmute group.",
             category: "group",
+            react: "👋",
             filename: __filename,
         },
         async(Void, citel, text) => {
@@ -836,11 +872,11 @@ cmd({
                 let Group = await sck.findOne({ id: citel.chat });
             if (text.split(" ")[0] == "close" || text.split(" ")[0] == "mute" ) {
                 await Void.groupSettingUpdate(citel.chat, "announcement")
-                    .then((res) => citel.reply(`〖 *Group settings changed* 〗\nGroup settings has been changed\n Now Only Admin can send messages\n\nMAKINO-MD`))
+                    .then((res) => citel.reply(`〖 *Group settings changed* 〗\nGroup settings has been changed and Now Only Admin can send messages\n\n🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ`))
                     .catch((err) => citel.reply("Error :" +err));
             } else if (text.split(" ")[0] === "open"||text.split(" ")[0] === "unmute") {
                 await Void.groupSettingUpdate(citel.chat, "not_announcement")
-                    .then((res) => citel.reply(`〖 *Group settings changed* 〗\nGroup settings has been changed\n Now everyone can send messages\n\nMAKINO-MD`))
+                    .then((res) => citel.reply(`〖 *Group settings changed* 〗\nGroup settings has been changed and Now everyone can send messages\n\n🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ`))
                     .catch((err) => citel.reply("Error : " +err));
             } 
 else if(text=="Detail" || text=="Info" || text=="info" || text=="details" ) 
@@ -869,7 +905,7 @@ ${listAdmin}
   • Antilink        :    ${Group.antilink=='true'? '✅' : '❎'}
   • Economy      :    ${Group.economy=='true'? '✅' : '❎'}
   • Events         :     ${Group.events=='true'? '✅' : '❎'}
-  MAKINO-MD
+  *🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*
 `.trim()
     if(Group.events=='true'){
         ginfos +="\n*▢ Wellcome Message :* \n  • "+Group.welcome;
@@ -880,10 +916,10 @@ return await Void.sendMessage(citel.chat,{image:{url : pp} , caption: ginfos } ,
 else
 { 
     return await citel.send(`*_Uhh Dear Give me Query From Following Options_*
-_1:- .group Mute_
-_2:- .group Unmute_
-_3:- .group Info_
-MAKINO-MD
+*_1:- .group Mute_*
+*_2:- .group Unmute_*
+*_3:- .group Info_*
+*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*
 `)
     //  let buttons = [{ buttonId: `${prefix}group open`, buttonText: { displayText: "📍Unmute",},type: 1,},{buttonId: `${prefix}group close`,buttonText: {displayText: "📍Mute",},type: 1, },];     await Void.sendButtonText(citel.chat,buttons,`Group Mode`, Void.user.name, citel);
 
@@ -897,6 +933,7 @@ cmd({
             desc: "Add that person in group",
             fromMe: true,
             category: "group",
+            react: "💖",
             filename: __filename,
             use: '<number>',
         },
@@ -912,6 +949,7 @@ cmd({
             if (!isBotAdmins) return citel.reply(tlang().botAdmin);
             let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
             await Void.groupParticipantsUpdate(citel.chat, [users], "add");
+            await citel.reply(`*Done ✅*\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`);
 
         }
     )
@@ -920,6 +958,7 @@ cmd({
             pattern: "getjids",
             desc: "Sends chat id of every groups.",
             category: "group",
+            react: "💎",
             filename: __filename,
         },
         async(Void, citel, text,{ isCreator }) => {
@@ -937,7 +976,7 @@ cmd({
                 jackhuh += `*Subject:-* ${metadata.subject}\n`
                 jackhuh += `*Member :* ${metadata.participants.length}\n`
                 jackhuh += `*Jid:-* ${i}\n\n`
-                bname = '`MAKINO-MD`'
+                bname = '`🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ`'
 
             }
             citel.reply(jackhuh)
@@ -950,6 +989,7 @@ cmd({
         pattern: "demote",
         desc: "Demotes replied/quoted user from group",
         category: "group",
+        react: "📍",
         filename: __filename,
         use: '<quote|reply|number>',
     },
@@ -966,6 +1006,7 @@ cmd({
             let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
             if (!users) return;
             await Void.groupParticipantsUpdate(citel.chat, [users], "demote");
+            await citel.reply(`User Demote successful.\n\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`);
         } catch {
             //                citel.reply(tlang().botAdmin);
 
@@ -979,6 +1020,7 @@ cmd({
             alias: ["delete"],
             desc: "Deletes message of any user",
             category: "group",
+            react: "🚫",
             filename: __filename,
             use: '<quote/reply message.>',
         },
@@ -1018,6 +1060,7 @@ cmd({
             pattern: "checkwarn",
             desc: "Check warns",
             category: "group",
+            react: "🫠",
             filename: __filename,
             use: '<quoted/reply user.>',
         },
@@ -1032,7 +1075,7 @@ cmd({
                 teskd += `*${i+1}*\n╭─────────────◆\n│ *🍁In Group:-* ${h[i].group}\n`
                 teskd += `│ *🔰Time:-* ${h[i].date}\n`
                 teskd += `│ *⚠️Warned by:-* ${h[i].warnedby}\n`
-                teskd += `│ _📍Reason: ${h[i].reason}_\n╰─────────────◆\n\nMAKINO-MD\n\n`
+                teskd += `│ _📍Reason: ${h[i].reason}_\n╰─────────────◆\n\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*\n\n`
             }
             citel.reply(teskd)
         }
@@ -1044,6 +1087,7 @@ cmd({
             desc: "Block a user",
             fromMe: true,
             category: "owner",
+            react: "😙",
             filename: __filename,
             use: '<quote/reply user.>',
         },
@@ -1052,6 +1096,7 @@ cmd({
             if (!isCreator) citel.reply(tlang().owner);
             let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
             await Void.updateBlockStatus(users, "block")
+            await citel.reply("`Blocked`")
                 .then((res) => console.log(jsonformat(res)))
                 .catch((err) => console.log(jsonformat(err)));
 
@@ -1133,8 +1178,8 @@ cmd({ on: "text" }, async(Void, citel) => {
 ║ *⚡Level*: ${sck1.level}🌀
 ║ *💫Exp*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
 ║ *📍Role*: *${role}*
-║ *Enjoy🥳*
-║  MAKINO-MD
+║ *Have fun🥳*
+║  *🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*
 ╚
 `,
             }, {
