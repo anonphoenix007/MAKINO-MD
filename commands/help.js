@@ -85,11 +85,10 @@ Secktor.cmd({
         _0x2ce686 += "╰━═════════════━❖\n";
       }
     }
-    _0x2ce686 += "🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ\n\nᴄʀᴇᴀᴛᴇᴅ ʙʏ Tᴀɪʀᴀ Mᴀᴋɪɴᴏ 🐤 ";
+    _0x2ce686 += "*`🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ`*\n\n*ᴄʀᴇᴀᴛᴇᴅ ʙʏ Tᴀɪʀᴀ Mᴀᴋɪɴᴏ 🐤*";
     let _0x41763e = {
       image: {
-        //url: await botpic()
-        url: null
+        url: await botpic()
       },
       caption: _0x2ce686
     };
