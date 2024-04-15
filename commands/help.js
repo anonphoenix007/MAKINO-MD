@@ -66,9 +66,9 @@ Secktor.cmd({
     moment.tz.setDefault("Asia/KOLKATA").locale("id");
     const _0x5dd623 = moment.tz("Asia/Kolkata").format("DD/MM/YYYY");
     let _0x16b1ac = await sck1.countDocuments();
-    let _0x2ce686 = "┎━═══{*『 " + fancytext(Config.ownername.split(" ")[0], 58) + " 』*}═══━❖";
-    let _0x2ce686 = "┃✯╭────────────···❖\n";
-    let _0x2ce686 = "┻✯│\n";
+    _0x2ce686 += "┎━═══{*『 " + fancytext(Config.ownername.split(" ")[0], 58) + " 』*}═══━❖";
+    _0x2ce686 += "┃✯╭────────────···❖\n";
+    _0x2ce686 += "┻✯│\n";
     
     _0x2ce686 += "```" + "│✯│◦➛ 💂‍♀️ ʜᴇʏ ᴜsᴇʀ  ➫ " + _0x22e548.pushName + "\n│✯│◦➛ 🙂‍↕ ᴄʀᴇᴀᴛᴏʀ ➫ Tᴀɪʀᴀ Mᴀᴋɪɴᴏ\n│✯│◦➛ ⚙️ Mʏᴘʀᴇꜰɪx ➫ 〖" + prefix + "〗\n│✯│◦➛ 👤 Owner ➫ " + Config.ownername + "\n│✯│◦➛ ⏰ ᴜᴘᴛɪᴍᴇ ➫ " + runtime(process.uptime()) + "\n│✯│◦➛ 🧠 ᴍᴇᴍᴏʀʏ ➫ " + formatp(os.totalmem() - os.freemem()) + "/" + formatp(os.totalmem()) + "```\n"
     _0x2ce686 += "┳✯│\n";
