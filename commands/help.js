@@ -237,59 +237,6 @@ Secktor.cmd({
   }
   return _0x4d0179.reply(_0x5f3515.join("\n"));
 });
-Secktor.cmd({
-  pattern: "list",
-  desc: "list menu",
-  category: "general"
-}, async (Void, citel) => {
-  const {
-    commands
-  } = require("../lib");
-  /*let str = `
-  ┏━━━━━•❃〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙❃•━━━━━┓`
-  str += `
-  ┃ ⛥┏━━━━━•❃°•°•━━━━━•❃°•°•      
-  •͙͙✧User: ${citel.pushName}
-  •͙͙✧Theme: ${tlang().title}
-  •͙͙✧ Prefix: ${prefix}
-  •͙͙✧ Owner: Tᴀɪʀᴀ Mᴀᴋɪɴᴏ
-  •͙͙✧ Commands: ${commands.length}
-  •͙͙✧ Uptime: ${runtime(process.uptime())}
-  •͙͙✧Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-  •͙͙✧𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐒𝐓𝐀𝐑-𝐌𝐃
-  •͙͙✧⃝┗━━━━━•❃°•°•━━━━━•❃°•°•
-  ┗━━━━━•❃°•°•━━━━━•❃°•°•\n`*/
-  let str = `
-┌───═[ *MAKINO-MD* ]═──▸`;
-  str += `
-│╭────────────···▸
-┴│▸
-⬡│▸ User:- ${citel.pushName}
-⬡│▸ Theme:- ${tlang().title}
-⬡│▸ Owner:- Tᴀɪʀᴀ Mᴀᴋɪɴᴏ
-⬡│▸ Uptime:- ${runtime(process.uptime())}
-⬡│▸ Plugins:- ${commands.length}
-⬡│▸ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┬│▸
-│╰─────────────···▸
-└───────────────···▸\n`;
-  for (let i = 0; i < commands.length; i++) {
-    if (commands[i].pattern == undefined) {
-      continue;
-    }
-    str += `✰ ${i + 1} *${fancytext(commands[i].pattern, 1)}*\n`;
-    if (commands[i].desc === undefined) {
-      commands[i].desc = "";
-    }
-    str += `✰ ${fancytext(commands[i].desc, 1)}\n`;
-  }
-  return await Void.sendMessage(citel.chat, {
-    image: {
-      url: THUMB_IMAGE
-    },
-    caption: str
-  });
-});
 //---------------------------------------------------------------------------
 Secktor.cmd({
   pattern: "owner",
@@ -349,15 +296,27 @@ Secktor.cmd({
   }
   return citel.reply(arr.join("\n"));
 });
-/*Secktor.cmd({
+Secktor.cmd({
   pattern: "presence",
   desc: "set WhatsApp presence (recording,available,composing,unavailable)",
   react: "📍",
   category: "general"
-}*/
-  
-
-  
+}, async (Void, citel, text) => {
+  try{
+    let pres = text
+    if (!pres) {
+      throw new error(`Unable to update presence/invalid Presence ➫ ${text} specified,
+      Specify a valid Presence type 🙂👌,
+¦ unavailable ¦ available ¦ composing ¦ recording`);
+      let statu = '`Presence updated to ${text}`';
+      await Void.sendPresenceUpdate(text, id);
+      await citel.reply(statu);
+  } catch (error) {
+    console.error(error);
+    await citel.reply(error.message);
+  }
+});
+  //------------------------//  
 Secktor.cmd({
   pattern: "time",
   desc: "Get the current time in a specified location.",
