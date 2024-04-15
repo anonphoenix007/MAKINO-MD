@@ -242,7 +242,7 @@ cmd({
 `
         for (let mem of participants) {
             textt += `💎 @${mem.id.split("@")[0]}\n`;
-            textt += `'🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ`';
+            textt += '*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*';
              }
         Void.sendMessage(citel.chat, {
             text: textt,
