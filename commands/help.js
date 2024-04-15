@@ -311,7 +311,7 @@ Secktor.cmd({
       let statu = '`Presence updated to ${text}`';
       await Void.sendPresenceUpdate(text, id);
       await citel.reply(statu);
-  } catch (error) {
+  }, catch (error) {
     console.error(error);
     await citel.reply(error.message);
   }
