@@ -82,7 +82,7 @@ return citel.reply("*_Sensei,Group Link was Revoked SuccesFully_*");
 if (!isBotAdmins) return citel.reply(tlang().admin);
 var str1 = await Void.groupInviteCode(citel.chat)
 var str2 ="https://chat.whatsapp.com/"
-var str3 ="`Here's the group link` ➫ \n"
+var str3 ="`Here's the group link` ➫ "
 var mergedString = `${str3} ${str2}${str1}\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`;
 let picc = {
     image: {
