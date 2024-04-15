@@ -296,6 +296,8 @@ Secktor.cmd({
   }
   return citel.reply(arr.join("\n"));
 });
+//------------------------------//
+
 Secktor.cmd({
   pattern: "presence",
   desc: "set WhatsApp presence (recording,available,composing,unavailable)",
@@ -308,10 +310,11 @@ Secktor.cmd({
       throw new error(`Unable to update presence/invalid Presence ➫ ${text} specified,
       Specify a valid Presence type 🙂👌,
 ¦ unavailable ¦ available ¦ composing ¦ recording`);
+    }
       let statu = '`Presence updated to ${text}`';
       await Void.sendPresenceUpdate(text, id);
       await citel.reply(statu);
-  }, catch (error) {
+  } catch (error) {
     console.error(error);
     await citel.reply(error.message);
   }
