@@ -192,7 +192,7 @@ cmd({
             if (!isCreator) citel.reply(tlang().owner);
             let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
             await Void.updateBlockStatus(users, "unblock")
-            await citel.reply("*User blocked.*")
+            await citel.reply("*User unblocked.*")
                 .then((res) => console.log(jsonformat(res)))
                 .catch((err) => console.log(jsonformat(err)));
         }
@@ -239,10 +239,10 @@ cmd({
 
 ➲ *Message :* ${text ? text : "blank"}\n\n
 ➲ *Author:* ${Config.ownername} ♕
+➲ *Bot_Name:* *🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*
 `
         for (let mem of participants) {
             textt += `💎 @${mem.id.split("@")[0]}\n`;
-            textt += '*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*';
              }
         Void.sendMessage(citel.chat, {
             text: textt,
