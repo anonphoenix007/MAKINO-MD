@@ -298,26 +298,13 @@ Secktor.cmd({
 });
 //------------------------------//
 
-Secktor.cmd({
+/*Secktor.cmd({
   pattern: "presence",
   desc: "set WhatsApp presence (recording,available,composing,unavailable)",
   react: "📍",
   category: "general"
 }, async (Void, citel, text) => {
-  try{
-    let pres = text
-    if (!pres) {
-      throw new error(`Unable to update presence/invalid Presence ➫ ${text} specified,
-      Specify a valid Presence type 🙂👌,
-¦ unavailable ¦ available ¦ composing ¦ recording`);
-    }
-      let statu = '`Presence updated to ${text}`';
-      await Void.sendPresenceUpdate(text, id);
-      await citel.reply(statu);
-  } catch (error) {
-    console.error(error);
-    await citel.reply(error.message);
-  }
+});*/
 });
   //------------------------//  
 Secktor.cmd({
