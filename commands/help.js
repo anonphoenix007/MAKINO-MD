@@ -304,8 +304,8 @@ Secktor.cmd({
   react: "📍",
   category: "general"
 }, async (Void, citel, text) => {
-});*/
 });
+});*/
   //------------------------//  
 Secktor.cmd({
   pattern: "time",
