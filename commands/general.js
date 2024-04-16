@@ -355,14 +355,13 @@ cmd({
       citel.reply(`Invalid reaction type selected. Supported types: all, cmd, off`);
       return;
    citel.reply(`Auto-reaction ${reactionEnabled ? 'enabled' : 'disabled'} and set to: ${reactionType}`);
-}})
+  };
    Void.on('message', async (message) => {
     if (!reactionEnabled) return;
     const reactionEmojis = emojiSet[reactionType];
     const randomEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)];
     Void.react(message.chatId, message.id, randomEmoji);
-  });
-	
+   )});
 
 
 
