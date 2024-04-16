@@ -21,6 +21,7 @@ cmd({
             category: "search",
             desc: "Sends image of asked Movie/Series.",
             use: '<text>',
+            react: "🔎",
             filename: __filename,
         },
         async(Void, citel, text) => {
@@ -63,6 +64,7 @@ cmd({
             category: "search",
             desc: "Sends weather info about asked place.",
             use: '<location>',
+            react: "🔎",
             filename: __filename,
         },
         async(Void, citel, text) => {
@@ -131,13 +133,14 @@ cmd({
         category: "search",
         desc: "Sends info of given query from Google Search.",
         use: '<text>',
+        react: "🌐",
         filename: __filename,
     },
     async(Void, citel, text) => {
-        if (!text) return citel.reply(`give me a query\n*Example : .google Who is Suhail Tech.*`);
+        if (!text) return citel.reply(`give me a query\n*Example : .google Taira Makino.*`);
         let google = require('google-it');
         google({ 'query': text}).then(res => {
-            let msg= `sᴛᴀʀ-ᴍᴅ⁹⁹⁹🔍ɢᴏᴏɢʟᴇ sᴇᴀʀᴄʜ  : ${text} \n\n`;
+            let msg= `*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*  : ${text} \n\n`;
             for (let g of res) {
                 msg+= `📌 Title : ${g.title}\n`;
                 msg+= `⚔️  Description : ${g.snippet}\n`;
@@ -154,11 +157,12 @@ cmd({
         category: "search",
         desc: "Searches Image on Google",
         use: '<text>',
+        react: "💾",
         filename: __filename,
     },
     async(Void, citel, text) => {
         if (!text) return citel.reply("Provide me a query!")
-        if (!text) return reply("Hey bie please tell me for which pic you're looking");
+        if (!text) return reply("Hey 👋,tell me which pic you're looking");
         let name1 = text.split("|")[0]
         let name2 = '5'; 
         citel.reply(`Sending ${name2} image(s) of ${name1} in chat`)
@@ -178,21 +182,23 @@ cmd({
             pattern: "couplepp",
             category: "search",
             desc: "Sends two couples pics.",
+            react: "🔎",
             filename: __filename,
         },
         async(Void, citel, text) => {
             let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
             let random = anu[Math.floor(Math.random() * anu.length)]
-            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `sᴛᴀʀ-ᴍᴅ⁹⁹⁹ ɪᴍᴀɢᴇ ᴅᴏᴡɴʟᴏᴅᴇʀ` }, { quoted: citel })
-            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `sᴛᴀʀ-ᴍᴅ⁹⁹⁹ ɪᴍᴀɢᴇ ᴅᴏᴡɴʟᴏᴅᴇʀ` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: '*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*' }, { quoted: citel });
+            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*` }, { quoted: citel });
         }
-    )
+    );
     //---------------------------------------------------------------------------
 cmd({
         pattern: "iswa",
         category: "search",
         desc: "Searches in given rage about given number.",
-        use: '23470450352xx',
+        use: '276404983xx',
+        react: "🔎",
         filename: __filename,
     },
     async(Void, citel, text) => {
