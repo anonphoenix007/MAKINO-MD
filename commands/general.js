@@ -361,7 +361,7 @@ cmd({
     const reactionEmojis = emojiSet[reactionType];
     const randomEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)];
     Void.react(message.chatId, message.id, randomEmoji);
-   );
+   )
 });
 
 
