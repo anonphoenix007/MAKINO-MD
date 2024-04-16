@@ -351,6 +351,6 @@ cmd({
   if (!reactionEnabled) return;
   if (reactionType === 'all' || (reactionType === 'cmd' && message.type === 'command')) {
     // React to the message
-    await Void.react(message.chatId, message.id, emojis);
+  Void.react(message.chatId, message.id, emojis);
   }
 //}); 
