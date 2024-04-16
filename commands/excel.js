@@ -178,7 +178,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+/*cmd({
             pattern: "unblock",
             desc: "Unblocked to the quoted user.",
             category: "owner",
@@ -196,7 +196,7 @@ cmd({
                 .then((res) => console.log(jsonformat(res)))
                 .catch((err) => console.log(jsonformat(err)));
         }
-    )
+    )*/
     //---------------------------------------------------------------------------
     cmd({
         pattern: "ujid",
