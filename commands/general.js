@@ -327,7 +327,7 @@ cmd({
   react: "💕",
   category: "utils",
   filename: __filename,
-}, async (Void, citel) => {
+}, async (Void, citel, message) => {
   if (!citel.args) return citel.reply("Specify a reaction type between *all, cmd*");
   const type = citel.args.trim().toLowerCase();
   switch (type) {
@@ -347,11 +347,10 @@ cmd({
   }
   citel.reply(`Auto-reaction ${reactionEnabled ? 'enabled' : 'disabled'} and set to: ${reactionType}`);
 });
-
-Void.on('message', async (message) => {
+//Void.on('message', async (message) => {
   if (!reactionEnabled) return;
   if (reactionType === 'all' || (reactionType === 'cmd' && message.type === 'command')) {
     // React to the message
     await Void.react(message.chatId, message.id, emojis);
   }
-}); 
+//}); 
