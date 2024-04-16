@@ -616,7 +616,6 @@ cmd({
             let leadtext = `
 *-------------------------------*
 *--------● LeaderBoard ●--------*
-*--------● 🐦Makino md ●--------*
 *-------------------------------*
 \n\n`
             for (let i = 0; i < fetchlb.length; i++) {
@@ -1082,7 +1081,7 @@ cmd({
 
     )
     //---------------------------------------------------------------------------
-cmd({
+/*cmd({
             pattern: "block",
             desc: "Block a user",
             fromMe: true,
@@ -1101,8 +1100,35 @@ cmd({
                 .catch((err) => console.log(jsonformat(err)));
 
         }
-    )
+    )*/
     //---------------------------------------------------------------------------
+cmd({
+  pattern: "block",
+  desc: "Block a user",
+  react: "🚫",
+  category: "moderation",
+  filename: __filename
+}, async (Void, citel, message) => {
+  if (!message.mentions[0] && !message.quoted) return citel.reply("`Tag a user or quote a message to block the sender 😤`");
+  const user = message.mentions[0] || message.quoted.user;
+  await Void.conn.blockUserById(user.jid);
+  citel.reply(`Blocked ${user.username}!`);
+});
+//------------------------------------------
+
+cmd({
+  pattern: "unblock",
+  desc: "Unblock a user",
+  react: "🔓",
+  category: "moderation",
+  filename: __filename
+}, async (Void, citel, message) => {
+  if (!message.mentions[0] && !message.quoted) return citel.reply("Tag a user or quote a message to unblock the user");
+  const user = message.mentions[0] || message.quoted.user;
+  await Void.conn.unblockUserById(user.jid);
+  citel.reply(`Unblocked ${user.username}!`);
+});
+
 
 //---------------------------------------------------------------------------
 if(Config.WORKTYPE!=='private'){
