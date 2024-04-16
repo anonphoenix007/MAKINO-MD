@@ -13,7 +13,9 @@ const { tlang, botpic, cmd, prefix, runtime, Config , sleep } = require('../lib'
 const axios = require('axios')
 const speed = require('performance-now')
 const fetch = require('node-fetch');
-
+let reactionEnabled = false;
+let reactionType = 'all';
+const emojis = ['❤', '💕', '😻', '🧡', '💛', '💚', '💙', '💜', '🖤', '❣', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '♥', '💌', '🙂', '🤗', '😌', '😉', '🤗', '😊', '🎊', '🎉', '🎁', '🎈', '👋', '😂', '😁', '✅', '📍', '⚠️', '🥺', '😪', '🦶', '😤', '🥰', '🎉', '🌚', '🌝']
 
 const PastebinAPI = require("pastebin-js");
 pastebin = new PastebinAPI("EMWTMkQAVfJa9kM-MRUrxd5Oku1U7pgL");
@@ -289,4 +291,67 @@ str+=`  \n1. GOJO\n2. SONIC-MD\n3. AYANOKOJI\n4. DEKU\n5. RENGOKU\n6. GENOS\n7. 
 return citel.reply(str)
 
 }
-)
+);
+//-------------------------------------------------//
+cmd({
+  pattern: "presence",
+  desc: "Update presence status",
+  react: "💻",
+  category: "misc",
+  filename: __filename
+}, async (Void, citel) => {
+  if (!citel.args) return citel.reply(`Specify a presence status\n recording, composing, available, unavailable`);
+  const status = citel.args.trim().toLowerCase();
+  switch (status) {
+    case "recording":
+      await Void.updatePresence(citel.chatId, "recording");
+      break;
+    case "composing":
+      await Void.updatePresence(citel.chatId, "composing");
+      break;
+    case "available":
+      await Void.updatePresence(citel.chatId, "available");
+      break;
+    case "unavailable":
+      await Void.updatePresence(citel.chatId, "unavailable");	  
+      break;
+    default:
+      return citel.reply(`Invalid presence status. Supported statuses: recording, composing, available, unavailable`);
+  }
+  citel.reply(`Presence status updated to ${status}`);
+}); 
+//---------------------------------------------//
+cmd({
+  pattern: "reaction",
+  desc: "Toggle auto-reaction to messages or commands",
+  react: "💕",
+  category: "utils",
+  filename: __filename,
+}, async (Void, citel) => {
+  if (!citel.args) return citel.reply("Specify a reaction type between *all, cmd*");
+  const type = citel.args.trim().toLowerCase();
+  switch (type) {
+    case "all":
+      reactionEnabled = true;
+      reactionType = 'all';
+      break;
+    case "cmd":
+      reactionEnabled = true;
+      reactionType = 'cmd';
+      break;
+    case "off":
+      reactionEnabled = false;
+      break;
+    default:
+      return citel.reply(`Invalid reaction typeselected,\n Supported types: *all, cmd, off*`);
+  }
+  citel.reply(`Auto-reaction ${reactionEnabled ? 'enabled' : 'disabled'} and set to: ${reactionType}`);
+});
+
+Void.on('message', async (message) => {
+  if (!reactionEnabled) return;
+  if (reactionType === 'all' || (reactionType === 'cmd' && message.type === 'command')) {
+    // React to the message
+    await Void.react(message.chatId, message.id, emojis);
+  }
+}); 
