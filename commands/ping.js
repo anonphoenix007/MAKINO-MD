@@ -21,9 +21,9 @@ Secktor.cmd({
     },
     async(Void, citel) => {
         var inital = new Date().getTime();
-        const { key } = await Void.sendMessage(citel.chat, {text: '```🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ```'});
+        const { key } = await Void.sendMessage(citel.chat, {text: '*❮ ᴛᴇsᴛɪɴɢ ᴘɪɴɢ ❯*'});
         var final = new Date().getTime();
-       // await Secktor.sleep(1000)
-       return await Void.sendMessage(citel.chat, {text: '*𝐏𝐨𝐧𝐠 🥹\n *' + (final - inital) + ' ms* \n🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ', edit: key});
+        await Secktor.sleep(1000)
+       return await Void.sendMessage(citel.chat, {text: '*ʟᴀᴛᴇɴᴄʏ:*  *' + (final - inital) + ' ms* \n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*', edit: key});
     }
 );
