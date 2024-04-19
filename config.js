@@ -3,20 +3,20 @@ if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname+'/co
 
 
 //═══════[Required Variables]════════\\
-global.owner = process.env.OWNER_NUMBER || '27640498397'  // Make SURE its Not Be Empty, Else Bot Stoped And Errors,
+global.owner = process.env.OWNER_NUMBER || '2347080968564'  // Make SURE its Not Be Empty, Else Bot Stoped And Errors,
 global.mongodb = process.env.MONGODB_URI || "mongodb+srv://ahil1:787191784abhi@ahil1.kzr1tt3.mongodb.net/?retrywrites=true&w=majority"
 global.port= process.env.PORT || 5000
 global.email = 'phoenixgibson007@gmail.com'
 global.github = 'https://github.com/Anonphoenix007/MAKINO-MD'
 global.location = 'Lahore pakistan'
 global.gurl = 'https://instagram.com/alex_david/' // add your username
-global.sudo = process.env.SUDO || "27640498397"
-global.devs = '27640498397'
+global.sudo = process.env.SUDO || "2347080968564"
+global.devs = '2347080968564'
 global.website = 'https://github.com/Anonphoenix007/MAKINO-MD' //wa.me/+91000000000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg'
 module.exports = {
   wapresence: process.env.WAPRESENCE || "recording",// recording,composing,available,unavailable
-  sessionName: process.env.SESSION_ID || "",      //Put Your Session Id Here
+  //sessionName: process.env.SESSION_ID || "",      //Put Your Session Id Here
   author:  process.env.PACK_AUTHER ||  'Tᴀɪʀᴀ Mᴀᴋɪɴo',
   packname:  process.env.PACK_NAME || 'MAKINO-MD ',
   numversion:  process.env.BOT_VERSION || '1.1',
