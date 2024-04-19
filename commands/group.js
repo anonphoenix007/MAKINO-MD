@@ -16,6 +16,21 @@ const Levels = require("discord-xp");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
 //---------------------------------------------------------------------------
 cmd({
+	pattern: "left",
+	desc: "exit group chat",
+	category: "group",
+	react: "🤝",
+}, async(Void, citel) => {
+	if(!citel.isGroup) {
+                         return await citel.reply("*_This command Command is only for group🥲!_*");
+       }
+	await Void.groupLeave(citel.jid)
+});
+//---------------//
+
+
+//--------//
+cmd({
             pattern: "join",
             desc: "joins group by link",
             category: "owner",
