@@ -22,18 +22,17 @@ const Levels = require("discord-xp");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
 const antidelete = require('../lib/antidelete.js');
 //---------------------------------------------------------------------------
-
 cmd({
   pattern: "antidelete",
   desc: "Enable or disable anti-delete messages",
-  category: "moderation",
-  react: "🥶",
+  category: "owner",
+  react: "💀",
   filename: __filename,
   use: '<on|off>',
 }, async (Void, citel, Message, { isCreator }) => {
   if (!Message) return citel.reply('`Antidelete On/Off?`');
   if (!isCreator) return citel.reply(tlang().owner);
-  if (Message.args.length > 0) {
+  if (Message.args && Message.args.length > 0) {
     if (Message.args[0] === 'on') {
       global.db.data.chats[Message.chat].antidel = true
       await antidelete(Void, Message)
@@ -44,6 +43,7 @@ cmd({
     citel.reply('`Antidelete On/Off?`');
   }
 });
+
 //------------------
 cmd({
             pattern: "join",
