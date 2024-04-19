@@ -20,7 +20,26 @@ const moment = require("moment-timezone");
 const fs = require('fs-extra')
 const Levels = require("discord-xp");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
+const antidelete = require('./antidelete.js');
 //---------------------------------------------------------------------------
+cmd({
+  pattern: "antidelete",
+  desc: "Enable or disable anti-delete messages",
+  category: "moderation",
+  react: "🔒",
+  filename: __filename,
+  use: '<on|off>',
+}, async (Void, citel, Message,{ isCreator }) => {
+  if (!message) return citel.reply('`Antidelete On/Off?`');
+  if (!isCreator) return citel.reply(tlang().owner);
+  if (message.args[0] === 'on') {
+    global.db.data.chats[message.chat].antidel = true
+    await antidelete(Void, message)
+  } else if (message.args[0] === 'off') {
+    global.db.data.chats[message.chat].antidel = false
+  }
+});
+//------------------
 cmd({
             pattern: "join",
             desc: "joins a group using the invitation link",
