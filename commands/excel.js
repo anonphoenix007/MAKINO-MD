@@ -20,7 +20,7 @@ const moment = require("moment-timezone");
 const fs = require('fs-extra')
 const Levels = require("discord-xp");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
-const antidelete = require('./antidelete.js');
+const antidelete = require('../lib/antidelete.js');
 //---------------------------------------------------------------------------
 cmd({
   pattern: "antidelete",
