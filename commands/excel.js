@@ -34,10 +34,10 @@ cmd({
   if (!isCreator) return citel.reply(tlang().owner);
   if (Message.args && Message.args.length > 0) {
     if (Message.args[0] === 'on') {
-      global.db.data.chats[Message.chat].antidel = true
+      global.mongodb.data.chats[Message.chat].antidel = true
       await antidelete(Void, Message)
     } else if (Message.args[0] === 'off') {
-      global.db.data.chats[Message.chat].antidel = false
+      global.mongodb.data.chats[Message.chat].antidel = false
     }
   } else {
     citel.reply('`Antidelete On/Off?`');
