@@ -16,7 +16,7 @@ global.website = 'https://github.com/Anonphoenix007/MAKINO-MD' //wa.me/+91000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg'
 module.exports = {
   wapresence: process.env.WAPRESENCE || "recording",// recording,composing,available,unavailable
-  //sessionName: process.env.SESSION_ID || "",      //Put Your Session Id Here
+  sessionName: process.env.SESSION_ID || "",      //Put Your Session Id Here
   author:  process.env.PACK_AUTHER ||  'Tᴀɪʀᴀ Mᴀᴋɪɴo',
   packname:  process.env.PACK_NAME || 'MAKINO-MD ',
   numversion:  process.env.BOT_VERSION || '1.1',
@@ -25,7 +25,7 @@ module.exports = {
   auto_read_status :  process.env.AUTO_READ_STATUS === undefined ? false : process.env.AUTO_READ_STATUS,
   autoreaction:  process.env.AUTO_REACTION  === undefined ? false : process.env.AUTO_REACTION ,
   antibadword :  process.env.ANTI_BAD_WORD === undefined ? 'nbwoed' : process.env.ANTI_BAD_WORD,
-  alwaysonline:  process.env.ALWAYS_ONLINE === undefined ? true : process.env.ALWAYS_ONLINE,
+  alwaysonline:  process.env.ALWAYS_ONLINE === undefined ? true : process.env.ALWAYS_ONLINE,//Do not edit this line at all.
   antifake : process.env.FAKE_COUNTRY_CODE === undefined ? '234' : process.env.FAKE_COUNTRY_CODE,
   readmessage:  process.env.READ_MESSAGE === undefined ? false : process.env.READ_MESSAGE,
   auto_status_saver: process.env.AUTO_STATUS_SAVER === undefined ? false : process.env.AUTO_STATUS_SAVER,
