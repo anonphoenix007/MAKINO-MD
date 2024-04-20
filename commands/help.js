@@ -99,33 +99,28 @@ Secktor.cmd({
     }
     _0x2ce686 += "*`🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ`*\n\n*ᴄʀᴇᴀᴛᴇᴅ ʙʏ Tᴀɪʀᴀ Mᴀᴋɪɴᴏ 🐤*";
     let _0x41763e = {
-      image: {
-        url: await botpic()
-      },
-      caption: _0x2ce686
-    };
-    /* let buttonM = {
-      audio: makino,
-                    //mimetype: 'audio/mp4',
-                    //fileName: titleYt + ".mp3",
-                    ptt: true,
-                    headerType: 4,
-                    contextInfo: {
-                        externalAdReply: {
-                            title: "MAKINO-MD",
-                            body: '🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ',
-                            renderLargerThumbnail: false,
-                            //thumbnailUrl: "https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg",
-                            mediaType: 1,
-                            thumbnail: makinol
-                        },
-                    },
-                }
-                await _0x41fa70.sendMessage(_0x22e548.chat, buttonM, { quoted: _0x22e548 });*/
+      image: {url: makinol},
+      caption: _0x2ce686,
+      footer: tlang().footer,
+      headerType: 4,
+      contextInfo: {
+      externalAdReply: {
+               title: "🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ",
+               body: "Command Menu",
+               renderLargerThumbnail: false, 
+               thumbnail: makinol,
+               mediaType: 4,
+               mediaUrl: '',
+               sourceUrl: ``,
+                },
+            },
+    }
     return await _0x41fa70.sendMessage(_0x22e548.chat, _0x41763e );
     //return fs.unlinkSync(makino); 
   }
 });
+//------------------------//
+
 Secktor.cmd({
   pattern: "test",
   desc: "Check if bot Is active",
