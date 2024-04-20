@@ -137,7 +137,7 @@ Secktor.cmd({
       audio: makino,
                     //mimetype: 'audio/mp4',
                     //fileName: titleYt + ".mp3",
-                    ptt: true,
+                    ptt: false,
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
