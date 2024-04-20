@@ -10,6 +10,15 @@
   "description": "BOT OWNER NAME", 
       "value": "Tᴀɪʀᴀ Mᴀᴋɪɴᴏ"
   },
+  "SESSION_ID": {
+    "description": "Put session ID here",
+    "required" :true
+  },
+  "WAPRESENCE": {
+    "description": "Action for Wapresence,recording,composing,available,unavailable",
+    "required" :true,
+    "value" :"recording"
+  },
   "ALIVE_MESSAGE": {
     "description": " SET YOUR ALIVE MESSAGE FOR THE BOT",
      "required" :false
