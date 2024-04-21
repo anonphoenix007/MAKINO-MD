@@ -98,9 +98,10 @@ Secktor.cmd({
       }
     }
     _0x2ce686 += "*`🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ`*\n\n*ᴄʀᴇᴀᴛᴇᴅ ʙʏ Tᴀɪʀᴀ Mᴀᴋɪɴᴏ 🐤*";
+    let imgurl = "https://telegra.ph/file/77a88aa26858107eb06b8.jpg";
     let _0x41763e = {
       //image: {url: await botpic()},
-      image: {},
+      image: { imgurl },
       caption: _0x2ce686,
       footer: tlang().footer,
       headerType: 4,
