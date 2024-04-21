@@ -5,6 +5,7 @@ const path = require("path");
 const Config = require("../config");
 const makino = fs.readFileSync(path.resolve(__dirname, './media/Makino-Md2.mp3'));
 const makinol = fs.readFileSync(path.resolve(__dirname, './media/makino.jpg'));
+const smlogo = fs.readFileSync(path.resolve(__dirname, './media/smlogo.jpg'));
 //const {default: makeWASocket,BufferJSON, useMultiFileAuthState } = require('@sampandey001/baileys');
 //const medias = makeWASocket({})
 let {
@@ -101,7 +102,7 @@ Secktor.cmd({
     let imgurl = "https://telegra.ph/file/77a88aa26858107eb06b8.jpg";
     let _0x41763e = {
       //image: {url: await botpic()},
-      image: { imgurl },
+      image: smlogo,
       caption: _0x2ce686,
       footer: tlang().footer,
       headerType: 4,
