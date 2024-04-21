@@ -30,6 +30,7 @@ module.exports = {
   readmessage:  process.env.READ_MESSAGE === undefined ? false : process.env.READ_MESSAGE,
   auto_status_saver: process.env.AUTO_STATUS_SAVER === undefined ? false : process.env.AUTO_STATUS_SAVER,
   HANDLERS:  process.env.PREFIX === undefined ? ',' : process.env.PREFIX,
+  PMGREET: PROCESS.ENV.PM_GREET === undefined ? 'Hello 👋,this is 🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ' : process.env.PM_GREET,
   warncount : process.env.WARN_COUNT === undefined ? 3 : process.env.WARN_COUNT,
   disablepm:  process.env.DISABLE_PM === undefined ? false : process.env.DISABLE_PM,
   levelupmessage:  process.env.LEVEL_UP_MESSAGE === undefined ? false : process.env.LEVEL_UP_MESSAGE,
