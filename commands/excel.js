@@ -67,7 +67,7 @@ cmd({
     //---------------------------------------------------------------------------
 
     cmd({
-        pattern: "resetlnk",
+        pattern: "revoke",
         desc: "reset group link.",
         category: "group",
         react: "⚠️",
@@ -106,8 +106,8 @@ return citel.reply("*_Sensei,Group Link was Revoked SuccesFully_*");
 if (!isBotAdmins) return citel.reply(tlang().admin);
 var str1 = await Void.groupInviteCode(citel.chat)
 var str2 ="https://chat.whatsapp.com/"
-var str3 ="`Here's the group link` ➫ "
-var mergedString = `${str3} ${str2}${str1}\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`;
+//var str3 ="`Here's the group link` ➫ "
+var mergedString = `${str2}${str1}\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`;
 let picc = {
     image: {
         url: await botpic()
@@ -1104,27 +1104,7 @@ cmd({
         }
 
     )
-    //---------------------------------------------------------------------------
-/*cmd({
-            pattern: "block",
-            desc: "Block a user",
-            fromMe: true,
-            category: "owner",
-            react: "😙",
-            filename: __filename,
-            use: '<quote/reply user.>',
-        },
-        async(Void, citel, text) => {
-            if (!citel.quoted) return citel.reply("Reply to user");
-            if (!isCreator) citel.reply(tlang().owner);
-            let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-            await Void.updateBlockStatus(users, "block")
-            await citel.reply("`Blocked`")
-                .then((res) => console.log(jsonformat(res)))
-                .catch((err) => console.log(jsonformat(err)));
-
-        }
-    )*/
+    //--------------------------------------------------------------------------
     //---------------------------------------------------------------------------
 cmd({
   pattern: "block",
@@ -1133,10 +1113,12 @@ cmd({
   category: "moderation",
   filename: __filename
 }, async (Void, citel, message) => {
-  if (!message.mentions[0] && !message.quoted) return citel.reply("`Tag a user or quote a message to block the sender 😤`");
-  const user = message.mentions[0] || message.quoted.user;
-  await Void.conn.blockUserById(user.jid);
-  citel.reply(`Blocked ${user.username}!`);
+   //id = message.mentions[0] || citel.quoted.sender return citel.reply("`Tag a user or quote a message to block the sender 😤`");
+  //const user = message.mentions[0] || message.quoted.user;
+  id = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net"; 
+  if (!id) return await citel.send("`Tag a user or quote a message to block the sender 😤`");
+  await citel.reply('_User Blocked 🫳🎤_');
+ 	await Void.updateBlockStatus(id, 'block');
 });
 //------------------------------------------
 
@@ -1147,12 +1129,22 @@ cmd({
   category: "moderation",
   filename: __filename
 }, async (Void, citel, message) => {
-  if (!message.mentions[0] && !message.quoted) return citel.reply("Tag a user or quote a message to unblock the user");
-  const user = message.mentions[0] || message.quoted.user;
-  await Void.conn.unblockUserById(user.jid);
-  citel.reply(`Unblocked ${user.username}!`);
+    id = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net"; 
+    if (!id) return await citel.send("`Tag a user or quote a message to unblock the sender 😤`");
+      await citel.reply('_User unblocked 🫴🎤_');
+     	await Void.updateBlockStatus(id, 'unblock');
 });
-
+//--------------------------
+cmd({
+	pattern: 'clear',
+	desc: 'clear current whatsapp chat',
+ react: "🌝",
+	category: 'moderation'
+}, async (Void, citel) => {
+	await Void.clearChat(citel.chat)
+	await citel.reply('_`Chat Cleared`_')
+});
+//-----------------
 
 //---------------------------------------------------------------------------
 if(Config.WORKTYPE!=='private'){
@@ -1221,16 +1213,20 @@ cmd({ on: "text" }, async(Void, citel) => {
                     url: await botpic(),
                 },
                 caption: `
-╔
-║ *Wow,Someone just*
-║ *leveled Up huh🔥*
-║ *👤Name*: ${citel.pushName}
-║ *⚡Level*: ${sck1.level}🌀
-║ *💫Exp*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
-║ *📍Role*: *${role}*
-║ *Have fun🥳*
-║  *🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*
-╚
+┎━═══{ *『 MAKINO-MD 』* }═══━❖
+┃✯╭────────────···❖
+┻✯│
+│✯│◦➛*Wow,Someone just*
+│✯│◦➛*leveled Up huh🔥*
+│✯│◦➛*👤Name*: ${citel.pushName}
+│✯│◦➛*⚡Level*: ${sck1.level}🌀
+│✯│◦➛*💫Exp*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
+│✯│◦➛*📍Role*: *${role}*
+│✯│◦➛*Have fun🥳*
+│✯│◦➛*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*
+┳✯│
+┃✯╰────────────···❖
+╰━═════════════━❖
 `,
             }, {
                 quoted: citel,
