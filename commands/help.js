@@ -99,7 +99,7 @@ Secktor.cmd({
     }
     _0x2ce686 += "*`🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ`*\n\n*ᴄʀᴇᴀᴛᴇᴅ ʙʏ Tᴀɪʀᴀ Mᴀᴋɪɴᴏ 🐤*";
     let _0x41763e = {
-      image: {url: await botpic()},
+      //image: {url: await botpic()},
       caption: _0x2ce686,
       footer: tlang().footer,
       headerType: 4,
