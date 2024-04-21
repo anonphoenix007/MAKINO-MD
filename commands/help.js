@@ -106,8 +106,7 @@ Secktor.cmd({
       contextInfo: {
       externalAdReply: {
                title: "🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ",
-               body: "Command Menu",
-               renderLargerThumbnail: false, 
+               body: "Command Menu", 
                thumbnail: makinol,
                mediaType: 4,
                mediaUrl: '',
