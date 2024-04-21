@@ -1115,7 +1115,7 @@ cmd({
 }, async (Void, citel, message) => {
    //id = message.mentions[0] || citel.quoted.sender return citel.reply("`Tag a user or quote a message to block the sender 😤`");
   //const user = message.mentions[0] || message.quoted.user;
-  const id = citel.mentionedJid[0] || citel.chat || citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net"
+  const id = citel.mentionedJid[0] || citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net"
   if (!id) return await citel.send("`Tag a user or quote a message to block the sender 😤`");
   await citel.reply('_User Blocked 🫳🎤_');
  	await Void.updateBlockStatus(id, 'block');
@@ -1129,7 +1129,7 @@ cmd({
   category: "moderation",
   filename: __filename
 }, async (Void, citel, message) => {
-    const id = citel.mentionedJid[0] || citel.chat || citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net"
+    const id = citel.mentionedJid[0] || citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net"
     if (!id) return await citel.send("`Tag a user or quote a message to unblock the sender 😤`");
       await citel.reply('_User unblocked 🫴🎤_');
      	await Void.updateBlockStatus(id, 'unblock');
