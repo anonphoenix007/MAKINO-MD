@@ -1,10 +1,11 @@
 const { tlang,cmd,getBuffer } = require('../lib')
 const Config = require('../config')
 const axios = require('axios')
-var nicetitle = '𝐄𝐗𝐂𝐄𝐋 𝐀𝐌𝐀𝐃𝐈'
-var nicebody = "|| ◁ㅤ❚❚ㅤ▷||ㅤ ↻"
-var niceurl = 'https://github.com/Xcelsama/STAR-MD'
-const nicepic = 'https://i.ibb.co/chtrhzs/Socialthumb.jpg';
+var nicetitle = '🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ'
+//var nicebody = "|| ◁ㅤ❚❚ㅤ▷||ㅤ ↻"
+var nicebody = "you mentioned Makino-md user!"
+var niceurl = 'https://github.com/anonphoenix007/MAKINO-MD'
+const nicepic = 'https://telegra.ph/file/f1ffb3c5f386f9f8bccb5.jpg';
 /*
 cmd({
     pattern: "mentionpreview",
