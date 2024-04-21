@@ -70,7 +70,7 @@ Secktor.cmd({
     _0x2ce686 += "┃✯╭────────────···❖\n"; 
     _0x2ce686 += "┻✯│\n";
     
-    _0x2ce686 += "```" + "│✯│◦➛ 💂‍♀️ ʜᴇʏ ᴜsᴇʀ  ➫ " + _0x22e548.pushName + "\n│✯│◦➛ 🙂‍↕ ᴄʀᴇᴀᴛᴏʀ ➫ Tᴀɪʀᴀ Mᴀᴋɪɴᴏ\n│✯│◦➛ ⚙️ Mʏᴘʀᴇꜰɪx ➫ 〖" + prefix + "〗\n│✯│◦➛ 👤 Owner ➫ " + Config.ownername + "\n│✯│◦➛ ⏰ ᴜᴘᴛɪᴍᴇ ➫ " + runtime(process.uptime()) + "\n│✯│◦➛ 🧠 ᴍᴇᴍᴏʀʏ ➫ " + formatp(os.totalmem() - os.freemem()) + "/" + formatp(os.totalmem()) + "```\n"
+    _0x2ce686 += "```" + "│✯│◦➛ ᴜsᴇʀ  ➫ " + _0x22e548.pushName + "\n│✯│◦➛ᴄʀᴇᴀᴛᴏʀ ➫ Tᴀɪʀᴀ Mᴀᴋɪɴᴏ\n│✯│◦➛ᴘʀᴇꜰɪx ➫ 〖" + prefix + "〗\n│✯│◦➛Owner ➫ " + Config.ownername + "\n│✯│◦➛ᴜᴘᴛɪᴍᴇ ➫ " + runtime(process.uptime()) + "\n│✯│◦➛ᴍᴇᴍᴏʀʏ ➫ " + formatp(os.totalmem() - os.freemem()) + "/" + formatp(os.totalmem()) + "```\n"
     _0x2ce686 += "┳✯│\n";
     _0x2ce686 += "┃✯╰────────────···❖\n";
     _0x2ce686 += "╰━════════════━❖\n";
