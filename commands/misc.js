@@ -209,7 +209,7 @@ let a = await getBuffer(`https://vihangayt.me/maker/text2img?q=${text}`)
      )
      //---------------------------------------------------------------------------
  cmd({
-             pattern: "wm",
+             pattern: "wa",
              desc: "Makes wa.me of quoted or mentioned user.",
              category: "misc",
              filename: __filename,
