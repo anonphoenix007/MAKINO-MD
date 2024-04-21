@@ -1106,7 +1106,7 @@ cmd({
     )
     //--------------------------------------------------------------------------
     //---------------------------------------------------------------------------
-cmd({
+/*cmd({
   pattern: "block",
   desc: "Block a user",
   react: "🚫",
@@ -1119,7 +1119,23 @@ cmd({
   if (!id) return await citel.send("`Tag a user or quote a message to block the sender 😤`");
   await citel.reply('_User Blocked 🫳🎤_');
  	await Void.updateBlockStatus(id, 'block');
-});
+});*/
+//-----------
+cmd({ pattern: "block", desc: "Block a user", react: "🚫", category: "moderation", filename: __filename }, async (Void, citel, message) => {
+  let id;
+  if (message.mentions.length > 0) {
+    // User was tagged with @
+    id = message.mentions[0];
+  } else if (citel.quoted) {
+    // User was quoted
+    id = citel.quoted.sender;
+  } else {
+    return citel.reply("`Tag a user or quote a message to block the sender 😤`");
+  }
+  await citel.reply('_User Blocked 🫳🎤_');
+  await Void.updateBlockStatus(id, 'block');
+}); 
+
 //------------------------------------------
 
 cmd({
