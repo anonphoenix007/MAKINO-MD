@@ -35,8 +35,17 @@ async(Void, citel, text,{ isCreator }) => {
 }
 )
  //---------------------------------------------------------------------------
-
+cmd({
+	pattern: 'readmore ?(.*)',
+	desc: 'Readmore generator',
+	category: 'misc',
+  react: '💎'
+}, async (Void, citel, text) => {
+	await citel.reply(text.replace(/\+/g, (String.fromCharCode(8206)).repeat(4001)))
+});
 //---------------------------------------------------------------------------
+
+//-----------------------------------—--
 cmd({
     pattern: "setgoodbye",
     desc: "sets goodbye message in specific group.",
@@ -152,7 +161,7 @@ let a = await getBuffer(`https://vihangayt.me/maker/text2img?q=${text}`)
      )
      //---------------------------------------------------------------------------
  cmd({
-             pattern: "steal",
+             pattern: "take",
              desc: "Makes sticker of replied image/video.",
              category: "sticker",
              filename: __filename,
@@ -168,7 +177,7 @@ let a = await getBuffer(`https://vihangayt.me/maker/text2img?q=${text}`)
                  author = anu[1] !== "" ? anu[1] : Config.author;
              } else {
                  pack = citel.pushName;
-                 author = "✨";
+                 author = "Tᴀɪʀᴀ Mᴀᴋɪɴᴏ";
              }
                  let media = await citel.quoted.download();
                  citel.reply("*Processing Your request*");
