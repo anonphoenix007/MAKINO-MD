@@ -202,25 +202,6 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-/*cmd({
-            pattern: "unblock",
-            desc: "Unblocked to the quoted user.",
-            category: "owner",
-            react: "🫥",
-            filename: __filename,
-
-        },
-        async(Void, citel, text,{ isCreator }) => {
-
-            if (!citel.quoted) return citel.reply("No🥱,You need to reply/tag a user");
-            if (!isCreator) citel.reply(tlang().owner);
-            let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-            await Void.updateBlockStatus(users, "unblock")
-            await citel.reply("*User unblocked.*")
-                .then((res) => console.log(jsonformat(res)))
-                .catch((err) => console.log(jsonformat(err)));
-        }
-    )*/
     //---------------------------------------------------------------------------
     cmd({
         pattern: "ujid",
@@ -763,32 +744,6 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-/*cmd({
-            pattern: "memegen",
-            desc: "Write text on quoted image.",
-            category: "group",
-            filename: __filename,
-            use: '<text>',
-        },
-        async(Void, citel, text) => {
-            let mime = citel.quoted.mtype
-            if (!/image/.test(mime)) return citel.reply(`Reply to Photo With Caption *text*`)
-            mee = await Void.downloadAndSaveMediaMessage(citel.quoted)
-            mem = await TelegraPh(mee)
-            meme = await getBuffer(`https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`)
-            let buttonMessage = {
-                image: meme,
-                caption: "Here we go",
-                footer: tlang().footer,
-                headerType: 4,
-            };
-            Void.sendMessage(citel.chat, buttonMessage, {
-                quoted: citel,
-            });
-            await fs.unlinkSync(mee)
-
-        }
-    )*/
     //---------------------------------------------------------------------------
 cmd({
             pattern: "gc",
@@ -1109,7 +1064,7 @@ cmd({
 /*cmd({
   pattern: "block",
   desc: "Block a user",
-  react: "🚫",
+  react: "🔒",
   category: "moderation",
   filename: __filename
 }, async (Void, citel, message) => {
@@ -1121,7 +1076,7 @@ cmd({
  	await Void.updateBlockStatus(id, 'block');
 });*/
 //-----------
-cmd({ pattern: "block", desc: "Block a user", react: "🚫", category: "moderation", filename: __filename }, async (Void, citel, message) => {
+cmd({ pattern: "block", desc: "Block a user", react: "🔒", category: "moderation", filename: __filename }, async (Void, citel, message) => {
   let id;
   if (message.mentions.length > 0) {
     // User was tagged with @
@@ -1138,7 +1093,7 @@ cmd({ pattern: "block", desc: "Block a user", react: "🚫", category: "moderati
 
 //------------------------------------------
 
-cmd({
+/*cmd({
   pattern: "unblock",
   desc: "Unblock a user",
   react: "🔓",
@@ -1149,6 +1104,21 @@ cmd({
     if (!id) return await citel.send("`Tag a user or quote a message to unblock the sender 😤`");
       await citel.reply('_User unblocked 🫴🎤_');
      	await Void.updateBlockStatus(id, 'unblock');
+});*/
+//--------------------------
+cmd({ pattern: "unblock", desc: "unBlock a user", react: "🔓", category: "moderation", filename: __filename }, async (Void, citel, message) => {
+  let id;
+  if (message.mentions.length > 0) {
+    // User was tagged with @
+    id = message.mentions[0];
+  } else if (citel.quoted) {
+    // User was quoted
+    id = citel.quoted.sender;
+  } else {
+    return citel.reply("`Tag a user or quote a message to unblock the sender 😤`");
+  }
+  await citel.reply('_User unBlocked 🫳🎤_');
+  await Void.updateBlockStatus(id, 'unblock');
 });
 //--------------------------
 cmd({
