@@ -1078,9 +1078,9 @@ cmd({
 //-----------
 cmd({ pattern: "block", desc: "Block a user", react: "🔒", category: "moderation", filename: __filename }, async (Void, citel, message) => {
   let id;
-  if (message.mentions.length > 0) {
+  if (citel.mentions.length > 0) {
     // User was tagged with @
-    id = message.mentions[0];
+    id = citel.mentions[0];
   } else if (citel.quoted) {
     // User was quoted
     id = citel.quoted.sender;
@@ -1108,9 +1108,9 @@ cmd({ pattern: "block", desc: "Block a user", react: "🔒", category: "moderati
 //--------------------------
 cmd({ pattern: "unblock", desc: "unBlock a user", react: "🔓", category: "moderation", filename: __filename }, async (Void, citel, message) => {
   let id;
-  if (message.mentions.length > 0) {
+  if (citel.mentions.length > 0) {
     // User was tagged with @
-    id = message.mentions[0];
+    id = citel.mentions[0];
   } else if (citel.quoted) {
     // User was quoted
     id = citel.quoted.sender;
