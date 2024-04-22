@@ -17,7 +17,7 @@ const { cmd } = require('../lib')
 const path = require("path");
 const fs = require("fs");
 const smlogo = fs.readFileSync(path.resolve(__dirname, './media/smlogo.jpg'));
-let tlang = require('../lib');
+const { tlang } = require('../lib');
     //---------------------------------------------------------------------------
 cmd({
             pattern: "question",
