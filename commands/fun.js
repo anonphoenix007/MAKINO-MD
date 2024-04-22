@@ -14,6 +14,9 @@
 const { dare, truth, random_question } = require('../lib/truth-dare.js')
 const axios = require('axios')
 const { cmd } = require('../lib')
+const path = require("path");
+const fs = require("fs");
+const smlogo = fs.readFileSync(path.resolve(__dirname, './media/smlogo.jpg'));
     //---------------------------------------------------------------------------
 cmd({
             pattern: "question",
@@ -49,6 +52,46 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
+        pattern: "intro",
+        desc: "Send intro of bot owner",
+        category: "general",
+        react: "👑"
+  },
+  async(Void, citel) => {
+    let text = `
+╭═══ ━ ━ ━ ━ • ━ ━ ━ ━ ═══♡•♡ 
+│      「 🐦Makino md  」
+│ Name     : Tᴀɪʀᴀ Mᴀᴋɪɴᴏ
+│ Alias    : Frederick
+│ Location : Earth
+│ Gender   : ᴍᴀʟᴇ
+│ Age      : 18
+│ Whatsapp : wa.me/2347080968564
+│ Facebook : https://www.facebook.com/H4X0ROffSec
+│ Telegram : https://t.me/TairaMakino
+│ Status   : Busy
+╰═══ ━ ━ ━ ━ • ━ ━ ━ ━ ═══♡•♡`
+    let buttonMessage = {
+            image: { url: smlogo },
+            caption: text,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: "🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ",
+                    body: "Owner Intro",
+                    thumbnail: log0,
+                    renderLargerThumbnail :false,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: ``,
+                },
+            },
+        }
+  return await Void.sendMessage(citel.chat, buttonMessage);
+  });
+//----------------------
+cmd({
         pattern: "fact",
         desc: "Sends fact in chat.",
         category: "fun",
@@ -56,7 +99,7 @@ cmd({
     },
     async(Void, citel, text) => {
         const { data } = await axios.get(`https://nekos.life/api/v2/fact`)
-        return citel.reply(`*Fact:* ${data.fact}\n\n*𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐒𝐓𝐀𝐑*`)   
+        return citel.reply(`*Fact:* ${data.fact}\n\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`)   
     }
 
 )
@@ -88,6 +131,7 @@ return citel.reply(replyf)
         pattern: "define",
         desc: "urban dictionary.",
         category: "fun",
+        react: "📙",
         filename: __filename,
     },
     async(Void, citel, text) => {
@@ -97,7 +141,24 @@ return citel.reply(replyf)
             Word: ${text}
             Definition: ${data.list[0].definition.replace(/\[/g, "").replace(/\]/g, "")}
             Example: ${data.list[0].example.replace(/\[/g, "").replace(/\]/g, "")}`
-            return citel.reply(textt)
+          let buttonMessage = {
+            image: { url: smlogo },
+            caption: textt,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: "🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ",
+                    body: "Define,Dictionary",
+                    thumbnail: log0,
+                    renderLargerThumbnail: false,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: ``,
+                },
+            },
+        };
+            return citel.reply(buttonMessage)
                     } catch {
                         return citel.reply(`No result for ${text}`)
                     }
@@ -147,8 +208,26 @@ async (Void, citel) => {
     }
 
     let pickupLine = data.pickup;
+    let buttonMessage = {
+            image: { url: smlogo },
+            caption: pickupLine,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: "🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ",
+                    body: "Rizz 🤭",
+                    thumbnail: log0,
+                    renderLargerThumbnail: false,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: ``,
+                },
+            },
+        };
 
-    return citel.reply(`*Pickup Line:* ${pickupLine}`);
+
+    return citel.reply(buttonMessage);
   } catch (error) {
     citel.reply(`Error: ${error.message || error}`);
   }
@@ -200,7 +279,25 @@ async (Void, citel) => {
     }
 
     let insult = data.insult;
-    return citel.reply(`*Insult:* ${insult}`);
+    let buttonMessage = {
+            image: { url: smlogo },
+            caption: insult,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: "🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ",
+                    body: "Insult",
+                    thumbnail: log0,
+                    renderLargerThumbnail: false,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: ``,
+                },
+            },
+        };
+    //return citel.reply(`*Insult:* ${insult}`);
+    return Void.sendMessage(buttonMessage);
   } catch (error) {
     citel.reply(`Error: ${error.message || error}`);
   }
