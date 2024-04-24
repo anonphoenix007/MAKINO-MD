@@ -1075,7 +1075,7 @@ cmd({ pattern: "block", desc: "Block a user", react: "🔒", category: "owner", 
 cmd({ pattern: "unblock", desc: "unBlock a user", react: "🔓", category: "owner", filename: __filename }, async (Void, citel, text,{ isCreator }) => {
 if(!isCreator) return citel.reply("Only Makino-Md owner can unblock 😹") 
 if(!text) return citel.reply("`Tag a user or quote a message to unblock the sender 😤`");
-let unblocks = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+let unblocks = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
 await citel.reply('_User unBlocked 🫳🎤_');
 await Void.updateBlockStatus(unblocks, 'unblock');
 });
