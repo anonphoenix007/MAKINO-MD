@@ -77,11 +77,10 @@ var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Mess
 "title": xeonybug1,
 }
 }), { userJid: from, quoted : m})
-XeonBotInc.relayMessage(from, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+Void.relayMessage(from, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
        }
-	
-
+});
 //--------------—------
  cmd({
     pattern: "setwelcome",
