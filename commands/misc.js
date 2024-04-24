@@ -64,7 +64,7 @@ cmd({
   }
 });
 //-----------------------------
-cmd({ pattern: "amountbug", desc: "Send amount of bug to number", category: "owner", react: "💀" }, async(Void, citel, text,{ isCreator } =>{
+cmd({ pattern: "amountbug", desc: "Send amount of bug to number", category: "owner", react: "💀" }, async(Void, citel, text,{ isCreator } => {
 if(!isCreator) return citel.reply("Only Makino-Md owner can Use this cmd 😹")
 if (!text) return citel.reply(`Use command with an amount\nExample .amountbug 5`)
 amount = `${encodeURI(text)}`
