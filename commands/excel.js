@@ -22,7 +22,7 @@ const Levels = require("discord-xp");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
 const antidelete = require('../lib/antidelete.js');
 //---------------------------------------------------------------------------
-cmd({
+/*cmd({
   pattern: "antidelete",
   desc: "Enable or disable anti-delete messages",
   category: "owner",
@@ -42,7 +42,7 @@ cmd({
   } else {
     citel.reply('`Antidelete On/Off?`');
   }
-});
+});*/
 
 //------------------
 cmd({
@@ -107,7 +107,7 @@ if (!isBotAdmins) return citel.reply(tlang().admin);
 var str1 = await Void.groupInviteCode(citel.chat)
 var str2 ="https://chat.whatsapp.com/"
 //var str3 ="`Here's the group link` ➫ "
-var mergedString = `${str2}${str1}\n*🐦Makino md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ*`;
+var mergedString = `${str2}${str1}`;
 let picc = {
     image: {
         url: await botpic()
@@ -1060,65 +1060,24 @@ cmd({
 
     )
     //--------------------------------------------------------------------------
-    //---------------------------------------------------------------------------
-/*cmd({
-  pattern: "block",
-  desc: "Block a user",
-  react: "🔒",
-  category: "moderation",
-  filename: __filename
-}, async (Void, citel, message) => {
-   //id = message.mentions[0] || citel.quoted.sender return citel.reply("`Tag a user or quote a message to block the sender 😤`");
-  //const user = message.mentions[0] || message.quoted.user;
-  let id = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net"
-  if (!id) return await citel.send("`Tag a user or quote a message to block the sender 😤`");
+    //-------------------------------------------------------------------------
+cmd({ pattern: "block", desc: "Block a user", react: "🔒", category: "owner", filename: __filename }, async (Void, citel, text,{ isCreator }) => {
+  if(!isCreator) return citel.reply("Only Makino-Md owner can block 😹")
+  if(!text) return citel.reply("`Tag a user or quote a message to block the sender 😤`");
+  let blocks = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
   await citel.reply('_User Blocked 🫳🎤_');
- 	await Void.updateBlockStatus(id, 'block');
-});*/
-//-----------
-cmd({ pattern: "block", desc: "Block a user", react: "🔒", category: "moderation", filename: __filename }, async (Void, citel, message) => {
-  let id;
-  if (citel.mentions.length > 0) {
-    // User was tagged with @
-    id = citel.mentions[0];
-  } else if (citel.quoted) {
-    // User was quoted
-    id = citel.quoted.sender;
-  } else {
-    return citel.reply("`Tag a user or quote a message to block the sender 😤`");
-  }
-  await citel.reply('_User Blocked 🫳🎤_');
-  await Void.updateBlockStatus(id, 'block');
+  await Void.updateBlockStatus(blocks, 'block');
 }); 
 
 //------------------------------------------
 
-/*cmd({
-  pattern: "unblock",
-  desc: "Unblock a user",
-  react: "🔓",
-  category: "moderation",
-  filename: __filename
-}, async (Void, citel, message) => {
-    let id = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net"
-    if (!id) return await citel.send("`Tag a user or quote a message to unblock the sender 😤`");
-      await citel.reply('_User unblocked 🫴🎤_');
-     	await Void.updateBlockStatus(id, 'unblock');
-});*/
 //--------------------------
-cmd({ pattern: "unblock", desc: "unBlock a user", react: "🔓", category: "moderation", filename: __filename }, async (Void, citel, message) => {
-  let id;
-  if (citel.mentions.length > 0) {
-    // User was tagged with @
-    id = citel.mentions[0];
-  } else if (citel.quoted) {
-    // User was quoted
-    id = citel.quoted.sender;
-  } else {
-    return citel.reply("`Tag a user or quote a message to unblock the sender 😤`");
-  }
-  await citel.reply('_User unBlocked 🫳🎤_');
-  await Void.updateBlockStatus(id, 'unblock');
+cmd({ pattern: "unblock", desc: "unBlock a user", react: "🔓", category: "owner", filename: __filename }, async (Void, citel, text,{ isCreator }) => {
+if(!isCreator) return citel.reply("Only Makino-Md owner can unblock 😹") 
+if(!text) return citel.reply("`Tag a user or quote a message to unblock the sender 😤`");
+let unblocks = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+await citel.reply('_User unBlocked 🫳🎤_');
+await Void.updateBlockStatus(unblocks, 'unblock');
 });
 //--------------------------
 cmd({
