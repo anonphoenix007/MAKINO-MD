@@ -22,6 +22,7 @@ const Levels = require("discord-xp");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
 const antidelete = require('../lib/antidelete.js');
 const makinol = fs.readFileSync("./media/makino.jpg");
+const smlogo = fs.readFileSync("./media/smlogo.jpg");
 //---------------------------------------------------------------------------
 /*cmd({
   pattern: "antidelete",
@@ -116,16 +117,16 @@ let buttonMessage = {
                 externalAdReply: {
                     title: "Group Invite link",
                     body: "🐦Makino-md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ",
-                    thumbnail: log0,
+                    thumbnail: smlogo,
                     renderLargerThumbnail: false,
                     mediaType: 1,
                     mediaUrl: '',
-                    sourceUrl: ``,
+                    sourceUrl: ``
                 },
             },
         };
 //return citel.reply("*_Group Invite Link Is Here_* \n*_"+mergedString+"_*");
-return citel.reply(buttonMessage)
+return citel.reply(buttonMessage);
     }
 	);
 //---------------------------------------------------------------------------
