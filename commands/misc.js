@@ -34,7 +34,7 @@ var mload = [
 let { key } = await Void.sendMessage(from, {text: 'Loading Please Wait'})
 
 for (let i = 0; i < mload.length; i++) {
-await Void.sendMessage(from, {text: mload[i], edit: key });
+await Void.sendMessage(citel.chat, {text: mload[i], edit: key });
 }
 }
 
