@@ -93,31 +93,23 @@ return citel.reply("*_Sensei,Group Link was Revoked SuccesFully_*");
         alias:["glink"],
         desc: "get group link.",
         category: "group",
-        react: "🫴",
         filename: __filename,
     },
-         async(Void, citel, text,{ isCreator }) => {
-            if (!citel.isGroup) return citel.reply(tlang().group);
-
-        const groupAdmins = await getAdmin(Void, citel)        
-            const botNumber = await Void.decodeJid(Void.user.id)
+	 async(Void, citel, text,{ isCreator }) => {
+	    if (!citel.isGroup) return citel.reply(tlang().group);
+	    
+        const groupAdmins = await getAdmin(Void, citel)	
+	    const botNumber = await Void.decodeJid(Void.user.id)
         const isBotAdmins =groupAdmins.includes(botNumber)
-
+	
 if (!isBotAdmins) return citel.reply(tlang().admin);
 var str1 = await Void.groupInviteCode(citel.chat)
 var str2 ="https://chat.whatsapp.com/"
-//var str3 ="`Here's the group link` ➫ "
 var mergedString = `${str2}${str1}`;
-let picc = {
-    image: {
-        url: await botpic()
-      },
-      caption: mergedString
-    };
-return citel.reply(picc);
-
+return citel.reply("*_Group Invite Link Is Here_* \n*_"+mergedString+"_*");
+	
     }
-        )
+	);
 //---------------------------------------------------------------------------
 cmd({
             pattern: "sticker",
