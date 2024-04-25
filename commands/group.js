@@ -21,9 +21,7 @@ cmd({
 	category: "group",
 	react: "🤝",
 }, async(Void, citel) => {
-	if(!citel.isGroup) {
-                         return await citel.reply("*_This command Command is only for group🥲!_*");
-       }
+	if(!citel.isGroup) return await citel.reply("*_This command Command is only for group🥲!_*");
 	await Void.groupLeave(citel.jid)
 });
 //---------------//
@@ -130,23 +128,6 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "unblock",
-            desc: "Unblocked to the quoted user.",
-            category: "owner",
-            filename: __filename,
-
-        },
-        async(Void, citel, text,{ isCreator }) => {
-
-            if (!citel.quoted) return citel.reply("Please reply to user");
-            if (!isCreator) citel.reply(tlang().owner);
-            let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-            await Void.updateBlockStatus(users, "unblock")
-                .then((res) => console.log(jsonformat(res)))
-                .catch((err) => console.log(jsonformat(err)));
-        }
-    )
     //---------------------------------------------------------------------------
     cmd({
         pattern: "ujid",
@@ -168,38 +149,6 @@ cmd({
 )
 
     //---------------------------------------------------------------------------
-cmd({
-        pattern: "tagall",
-        desc: "Tags every person of group.",
-        category: "group",
-        filename: __filename,
-    },
-    async(Void, citel, text,{ isCreator }) => {
-        if (!citel.isGroup) return citel.reply(tlang().group);
-        const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
-        const participants = citel.isGroup ? await groupMetadata.participants : "";
-        const groupAdmins = await getAdmin(Void, citel)
-        const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-        if (!isAdmins) return citel.reply(tlang().admin);
-
-        let textt = `
-══✪〘   *Tag All*   〙✪══
-
-➲ *Message :* ${text ? text : "blank"}\n\n
-➲ *Author:* ${citel.pushName} 🔖
-`
-        for (let mem of participants) {
-            textt += `📍 @${mem.id.split("@")[0]}\n`;
-        }
-        Void.sendMessage(citel.chat, {
-            text: textt,
-            mentions: participants.map((a) => a.id),
-        }, {
-            quoted: citel,
-        });
-    }
-)
-
 //---------------------------------------------------------------------------
 cmd({
             pattern: "request",
@@ -489,7 +438,7 @@ cmd({
             const fetchlb = await Levels.fetchLeaderboard("RandomXP", 5);
             let leadtext = `
 *-------------------------------*
-*----● LeaderBoard ● -----*
+*--------● LeaderBoard ●--------*
 *-------------------------------*
 \n\n`
             for (let i = 0; i < fetchlb.length; i++) {
@@ -554,64 +503,6 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "promote",
-            desc: "Provides admin role to replied/quoted user",
-            category: "group",
-            filename: __filename,
-            use: '<quote|reply|number>',
-        },
-        async(Void, citel, text ,{ isCreator }) => {
-	if (!isCreator) return citel.reply("```Only My Owner Can Use This Command```")
-	
-            if (!citel.isGroup) return citel.reply(tlang().group);
-            const groupAdmins = await getAdmin(Void, citel)
-            const botNumber = await Void.decodeJid(Void.user.id)
-            const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-            const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-
-	    if (!isBotAdmins) return citel.reply("*_I'm Not Admin Here, So I Can't Promote Someone_*");
-            if (!isAdmins) return citel.reply(tlang().admin);
-            
-            try {
-                let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-                if (!users) return;
-                await Void.groupParticipantsUpdate(citel.chat, [users], "promote");
-                return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
-            } catch {return await Void.sendMessage(citel.chat, { react: { text: '❌', key: citel.key }});
-                //		citel.reply(tlang().botAdmin);
-
-            }
-        }
-    )
-    //---------------------------------------------------------------------------
-cmd({
-            pattern: "kick",
-            desc: "Kicks replied/quoted user from group.",
-            category: "group",
-            filename: __filename,
-            use: '<quote|reply|number>',
-        },
-        async(Void, citel, text) => {
-            if (!citel.isGroup) return citel.reply(tlang().group);
-            const groupAdmins = await getAdmin(Void, citel)
-            const botNumber = await Void.decodeJid(Void.user.id)
-            const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-            const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-
-            if (!isAdmins) return citel.reply(tlang().admin);
-            if (!isBotAdmins) return citel.reply(tlang().botAdmin);
-            try {
-                let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-                if (!users) return;
-                await Void.groupParticipantsUpdate(citel.chat, [users], "remove");
-            } catch {
-                //		citel.reply(tlang().botAdmin);
-
-            }
-        }
-    )
-    //---------------------------------------------------------------------------
-cmd({
             pattern: "memegen",
             desc: "Write text on quoted image.",
             category: "group",
@@ -638,35 +529,6 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "group",
-            desc: "mute and unmute group.",
-            category: "group",
-            filename: __filename,
-        },
-        async(Void, citel, text) => {
-            if (!citel.isGroup) return citel.reply(tlang().group);
-            const groupAdmins = await getAdmin(Void, citel)
-            const botNumber = await Void.decodeJid(Void.user.id)
-            const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-            const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-            if (!citel.isGroup) return citel.reply(tlang().group);
-            if (!isBotAdmins) return citel.reply(tlang().botAdmin);
-            if (!isAdmins) return citel.reply(tlang().admin);
-            if (text.split(" ")[0] === "close") {
-                await Void.groupSettingUpdate(citel.chat, "announcement")
-                    .then((res) => reply(`Group Chat Muted :)`))
-                    .catch((err) => console.log(err));
-            } else if (text.split(" ")[0] === "open") {
-                await Void.groupSettingUpdate(citel.chat, "not_announcement")
-                    .then((res) => reply(`Group Chat Unmuted :)`))
-                    .catch((err) => console.log(err));
-            } else {
-
-                return citel.reply(`Group Mode:\n${prefix}group open- to open\n${prefix}group close- to close`);
-            }
-        }
-    )
     //---------------------------------------------------------------------------
 cmd({
             pattern: "grouppic",
@@ -777,32 +639,6 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-        pattern: "demote",
-        desc: "Demotes replied/quoted user from group",
-        category: "group",
-        filename: __filename,
-        use: '<quote|reply|number>',
-    },
-    async(Void, citel, text,{ isCreator }) => {
-	if (!isCreator) return citel.reply("```Only My Owner Can Use This Command```")
-        if (!citel.isGroup) return citel.reply(tlang().group);
-        const groupAdmins = await getAdmin(Void, citel)
-        const botNumber = await Void.decodeJid(Void.user.id)
-        const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-        const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-        if (!isBotAdmins) return await citel.reply(`*_I'm Not Admin In This Group, Idiot_*`); 
-        if (!isAdmins) return citel.reply(tlang().admin);
-        
-        try {
-            let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-            if (!users) return;
-           await Void.groupParticipantsUpdate(citel.chat, [users], "demote");
-           return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
-        } catch(e) { return await Void.sendMessage(users , {text :"Error While Demote User : " + e, } ,{quoted : citel})   }
-    }
-)
-
 //---------------------------------------------------------------------------
 cmd({
             pattern: "del",
@@ -869,24 +705,6 @@ cmd({
 
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "block",
-            desc: "blocks that person",
-            fromMe: true,
-            category: "owner",
-            filename: __filename,
-            use: '<quote/reply user.>',
-        },
-        async(Void, citel, text) => {
-            if (!citel.quoted) return citel.reply("Please reply to user");
-            if (!isCreator) citel.reply(tlang().owner);
-            let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-            await Void.updateBlockStatus(users, "block")
-                .then((res) => console.log(jsonformat(res)))
-                .catch((err) => console.log(jsonformat(err)));
-
-        }
-    )
     //---------------------------------------------------------------------------
 cmd({
         pattern: "broadcast",
