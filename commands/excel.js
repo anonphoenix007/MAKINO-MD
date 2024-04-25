@@ -21,6 +21,7 @@ const fs = require('fs-extra')
 const Levels = require("discord-xp");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
 const antidelete = require('../lib/antidelete.js');
+const makinol = fs.readFileSync("./media/makino.jpg");
 //---------------------------------------------------------------------------
 /*cmd({
   pattern: "antidelete",
@@ -106,8 +107,25 @@ if (!isBotAdmins) return citel.reply(tlang().admin);
 var str1 = await Void.groupInviteCode(citel.chat)
 var str2 ="https://chat.whatsapp.com/"
 var mergedString = `${str2}${str1}`;
-return citel.reply("*_Group Invite Link Is Here_* \n*_"+mergedString+"_*");
-	
+let buttonMessage = {
+            image: { url: makinol },
+            caption: mergedString,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: "Group Invite link",
+                    body: "🐦Makino-md ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ",
+                    thumbnail: log0,
+                    renderLargerThumbnail: false,
+                    mediaType: 1,
+                    mediaUrl: '',
+                    sourceUrl: ``,
+                },
+            },
+        };
+//return citel.reply("*_Group Invite Link Is Here_* \n*_"+mergedString+"_*");
+return citel.reply(buttonMessage)
     }
 	);
 //---------------------------------------------------------------------------
@@ -806,7 +824,7 @@ cmd({
             alias:["hidetag"],
             desc: "Tags every participants in a group chat.",
             category: "group",
-            react: "📳",
+            react: "🫣",
             filename: __filename,
             use: '<text>',
         },
