@@ -1080,6 +1080,31 @@ await citel.reply('_User unBlocked 🫳🎤_');
 await Void.updateBlockStatus(unblocks, 'unblock');
 });
 //--------------------------
+cmd({ pattern: "tovo", desc: "Turn a image/video to view once", category: "general", react: "🧐"}, async(Void, citel) => {
+                if (!citel.quoted) return citel.reply(`Reply to an Image/Video 😶`)
+                if (/image/.test(mime)) {
+                    vo = await Void.downloadAndSaveMediaMessage(citel.quoted)
+                    Void.sendMessage(citel.chat, {
+                        image: {
+                            url: vo
+                        },
+                        caption: `here you go!`,
+                        fileLength: "999",
+                        viewOnce: true
+                    })
+                } else if (/video/.test(mime)) {
+                    vo = await Void.downloadAndSaveMediaMessage(citel.quoted)
+                    Void.sendMessage(citel.chat, {
+                        video: {
+                            url: vo
+                        },
+                        caption: `Here it is!`,
+                        fileLength: "99999999",
+                        viewOnce: true
+                    })
+                }
+			    });
+//-------------
 cmd({
 	pattern: 'clear',
 	desc: 'clear current whatsapp chat',
