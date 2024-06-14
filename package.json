@@ -1,6 +1,6 @@
 {
   "name": "MAKINO-MD",
-  "version": "0.0.7",
+  "version": "1.2.0",
   "description": "Multi device whatsapp bot by Taira Makino.",
   "main": "lib/client.js",
   "type": "commonjs",
