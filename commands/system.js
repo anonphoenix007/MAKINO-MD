@@ -17,7 +17,7 @@ const axios = require('axios')
 const fetch = require('node-fetch');
     //---------------------------------------------------------------------------
 
-cmd({
+/*cmd({
             pattern: "qr",
             category: "user",
             filename: __filename,
@@ -33,7 +33,7 @@ cmd({
                 footer: ` Session bY >> ${Config.caption}`,
                 headerType: 4,
             };
-            return await Void.sendMessage(citel.chat, buttonMessaged );
+            return await Void.sendMessage(citel.chat, buttonMessaged );*/
          
             /*
             let buttonMessaged = {
@@ -54,7 +54,7 @@ cmd({
             await Void.sendMessage(citel.chat, buttonMessaged, {  quoted: citel });
 
 */
-        })
+        
         
 //--------------------------------------------------------------------------- 
 cmd({
