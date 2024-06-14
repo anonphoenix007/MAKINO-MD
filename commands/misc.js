@@ -39,7 +39,7 @@ await Void.sendMessage(citel.chat, {text: mload[i], edit: key });
 }
 
   //---------------------------------------------------------------------------
-cmd({
+/*cmd({
    pattern: "lagbug",
    desc: "WhatsApp crash",
    category: "owner",
@@ -81,7 +81,7 @@ var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Mess
 Void.relayMessage(from, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
        }
-});
+});*/
 //--------------—------
  cmd({
     pattern: "setwelcome",
