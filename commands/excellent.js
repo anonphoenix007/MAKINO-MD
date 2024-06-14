@@ -22,7 +22,7 @@ const Levels = require("discord-xp");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
 //const antidelete = require('../lib/antidelete.js');
 const makinol = fs.readFileSync("./media/makino.jpg");
-const smlogo = fs.readFileSync("./media/smlogo.jpg");
+const smlogo = fs.readFileSync("./media/makino.jpg");
 //---------------------------------------------------------------------------
 /*cmd({
   pattern: "antidelete",
