@@ -117,7 +117,7 @@ Secktor.cmd({
                 },
             },
     }
-    return await _0x41fa70.sendMessage(_0x22e548.chat, _0x41763e );
+    return await _0x41fa70.sendMessage(_0x22e548.chat, { text: _0x2ce686 });
     //return fs.unlinkSync(makino); 
   }
 });
